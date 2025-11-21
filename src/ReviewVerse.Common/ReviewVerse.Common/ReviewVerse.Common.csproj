@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="../../ReviewVerse.Common/ReviewVerse.Common/ReviewVerse.Common.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,6 +1,8 @@
-﻿namespace ReviewVerse.Review.Domain;
+﻿using ReviewVerse.Common.Entities;
 
-public class Review
+namespace ReviewVerse.Review.Domain;
+
+public class Review : BaseEntity
 {
     public Review(byte rating, string mediaId, string userId, string comment)
     {
@@ -8,6 +10,7 @@ public class Review
         MediaId = mediaId;
         UserId = userId;
         Comment = comment;
+        CreatedAt = DateTime.UtcNow;
     }
 
     public byte Rating { get; private set; }
@@ -23,5 +26,6 @@ public class Review
         }
 
         Rating = newRating;
+        UpdatedAt = DateTime.UtcNow;
     }
 }
