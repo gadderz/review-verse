@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/ReviewVerse.Review/">
+    <Project Path="src/ReviewVerse.Review/ReviewVerse.Review.API/ReviewVerse.Review.API.csproj" />
+    <Project Path="src\ReviewVerse.Review\ReviewVerse.Review.Domain\ReviewVerse.Review.Domain.csproj" Type="C#" />
+  </Folder>
+</Solution>
