@@ -4,19 +4,19 @@ namespace ReviewVerse.Review.Domain;
 
 public class Review : BaseEntity
 {
-    public Review(byte rating, string mediaId, string userId, string comment)
+    public Review(byte rating, string mediaId, string userId, string text)
     {
         Rating = rating;
         MediaId = mediaId;
         UserId = userId;
-        Comment = comment;
+        Text = text;
         CreatedAt = DateTime.UtcNow;
     }
 
     public byte Rating { get; private set; }
     public string MediaId { get; private set; }
     public string UserId { get; private set; }
-    public string Comment { get; private set; }
+    public string Text { get; private set; }
 
     public void UpdateRating(byte newRating)
     {
