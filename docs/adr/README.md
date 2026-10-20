@@ -26,6 +26,17 @@ adotada tem seu próprio ADR e uma nova versão da constituição.
 | [ADR-0016](0016-contrato-do-coordenador.md) | Contrato do Coordenador | Aceito | 0.17 |
 | [ADR-0017](0017-contrato-do-especificador.md) | Contrato do Especificador | Aceito | 0.18 |
 | [ADR-0018](0018-contrato-do-revisor.md) | Contrato do Revisor | Aceito | 0.19 |
+| [ADR-0019](0019-massa-controlada-na-primeira-consulta.md) | Massa controlada na primeira consulta do catálogo | Aceito | 0.20 |
+| [ADR-0020](0020-comparacao-de-nomes-na-consulta.md) | Comparação de nomes na consulta de jogos | Aceito | 0.21 |
+| [ADR-0021](0021-consulta-publica-do-catalogo.md) | Consulta pública do catálogo de jogos | Aceito | 0.22 |
+| [ADR-0022](0022-retorno-minimo-da-consulta.md) | Retorno mínimo da primeira consulta de jogos | Aceito | 0.23 |
+| [ADR-0023](0023-paginacao-da-consulta-de-jogos.md) | Paginação e ordenação da consulta de jogos | Aceito | 0.24 |
+| [ADR-0024](0024-postgresql-local-em-docker.md) | PostgreSQL local em contêiner Docker | Aceito | 0.25 |
+| [ADR-0025](0025-modulo-inicial-do-catalogo.md) | Módulo inicial do Catálogo na API modular | Aceito | 0.26 |
+| [ADR-0026](0026-persistencia-do-catalogo-com-ef-core.md) | Persistência e migrações do Catálogo com EF Core | Aceito | 0.27 |
+| [ADR-0027](0027-busca-literal-com-unaccent.md) | Busca literal e agregação no PostgreSQL | Aceito | 0.28 |
+| [ADR-0028](0028-contrato-http-da-consulta-de-jogos.md) | Contrato HTTP da consulta de jogos | Aceito | 0.29 |
+| [ADR-0029](0029-verificacao-do-catalogo-com-postgresql-isolado.md) | Verificação do Catálogo com PostgreSQL isolado | Aceito | 0.30 |
 
 Os dois primeiros ADRs registram retrospectivamente decisões já confirmadas
 pelo autor nesta conversa. Mantêm as versões que essas decisões já receberam;

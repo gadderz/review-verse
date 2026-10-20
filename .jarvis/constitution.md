@@ -1,6 +1,6 @@
 # Constituição do Jarvis — ReviewVerse
 
-Versão: 0.19, revisão inicial concluída com o autor.
+Versão: 0.30, revisão inicial concluída com o autor.
 Os princípios dos artigos 1 a 9 estão confirmados pelas decisões registradas
 neste documento. A evolução da constituição continua pelo procedimento de ADRs.
 
@@ -172,7 +172,7 @@ da constituição. A regra abrange decisões de produto, arquitetura e processo.
 Uma proposta ou hipótese ainda não adotada deve continuar identificada como tal.
 
 Cada decisão adotada gera sua própria versão da constituição, seguindo a
-sequência atual: `0.19`, `0.20`, `0.21` e assim por diante. Não agrupar decisões
+sequência atual: `0.30`, `0.31`, `0.32` e assim por diante. Não agrupar decisões
 independentes em uma única versão. Registrar a versão mesmo quando a decisão
 altera somente uma fonte de produto ou arquitetura; nesse caso, atualizar o
 histórico da constituição e manter seus princípios.
@@ -218,6 +218,17 @@ exigir nova confirmação quando a autorização existente já for suficiente.
 | 0.17 | [ADR-0016 — Contrato do Coordenador](../docs/adr/0016-contrato-do-coordenador.md). |
 | 0.18 | [ADR-0017 — Contrato do Especificador](../docs/adr/0017-contrato-do-especificador.md). |
 | 0.19 | [ADR-0018 — Contrato do Revisor](../docs/adr/0018-contrato-do-revisor.md). |
+| 0.20 | [ADR-0019 — Massa controlada na primeira consulta do catálogo](../docs/adr/0019-massa-controlada-na-primeira-consulta.md). |
+| 0.21 | [ADR-0020 — Comparação de nomes na consulta de jogos](../docs/adr/0020-comparacao-de-nomes-na-consulta.md). |
+| 0.22 | [ADR-0021 — Consulta pública do catálogo de jogos](../docs/adr/0021-consulta-publica-do-catalogo.md). |
+| 0.23 | [ADR-0022 — Retorno mínimo da primeira consulta de jogos](../docs/adr/0022-retorno-minimo-da-consulta.md). |
+| 0.24 | [ADR-0023 — Paginação e ordenação da consulta de jogos](../docs/adr/0023-paginacao-da-consulta-de-jogos.md). |
+| 0.25 | [ADR-0024 — PostgreSQL local em contêiner Docker](../docs/adr/0024-postgresql-local-em-docker.md). |
+| 0.26 | [ADR-0025 — Módulo inicial do Catálogo na API modular](../docs/adr/0025-modulo-inicial-do-catalogo.md). |
+| 0.27 | [ADR-0026 — Persistência e migrações do Catálogo com EF Core](../docs/adr/0026-persistencia-do-catalogo-com-ef-core.md). |
+| 0.28 | [ADR-0027 — Busca literal e agregação no PostgreSQL](../docs/adr/0027-busca-literal-com-unaccent.md). |
+| 0.29 | [ADR-0028 — Contrato HTTP da consulta de jogos](../docs/adr/0028-contrato-http-da-consulta-de-jogos.md). |
+| 0.30 | [ADR-0029 — Verificação do Catálogo com PostgreSQL isolado](../docs/adr/0029-verificacao-do-catalogo-com-postgresql-isolado.md). |
 
 O [arquivo de versões](versions/README.md) preserva as cópias disponíveis.
 O histórico de decisões anteriores do produto permanece em

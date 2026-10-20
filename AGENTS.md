@@ -45,8 +45,9 @@ nos ADRs antes de remover o documento temporário.
 - A POC ainda será construída. A arquitetura aprovada é API .NET modular, Worker
   separado, PostgreSQL, Next.js e Keycloak. A organização definitiva dos módulos
   permanece em detalhamento.
-- O código atual contém duas APIs iniciais, Worker e bibliotecas .NET, com alvo
-  `net10.0`; essa árvore ainda não representa a arquitetura final.
+- O Catálogo tem consulta pública por nome, biblioteca do módulo, persistência
+  PostgreSQL e testes, conforme FEAT-006. A API de Reviews e o Worker permanecem
+  iniciais; os projetos usam `net10.0` e a organização completa continua pendente.
 - Visão e arquitetura em `docs/drafts/` contêm decisões confirmadas e propostas
   explicitamente identificadas. O nome da pasta não torna tudo provisório.
 - Para comportamento de produto, consulte `docs/drafts/visao-do-projeto.md`;
@@ -64,7 +65,9 @@ Para mudanças .NET, o comando de compilação da solução é
 O manifesto `.config/dotnet-tools.json` registra CSharpier; use a versão local
 quando formatação de C# for necessária.
 
-Ainda não há projetos de testes ou aplicação Next.js na árvore inspecionada.
-Não invente comandos de testes ou resultados. Para documentação, confira links
+Há projetos de testes unitários e integrados do Catálogo em `tests/`; consulte
+`docs/desenvolvimento/catalogo-local.md` para comandos e dependências. A integração
+exige PostgreSQL real e conexão explícita de testes. Ainda não há aplicação
+Next.js. Não invente comandos ou resultados. Para documentação, confira links
 locais e execute `git diff --check`. Registre limitações de ambiente e falhas
 preexistentes separadamente dos resultados da mudança.

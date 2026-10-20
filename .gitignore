@@ -537,3 +537,5 @@ obj/
 # Custom
 .DS_Store
 *.swp
+# Local catalog credentials
+.env
