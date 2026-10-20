@@ -10,8 +10,30 @@ A descoberta inicial consolidou a proposta do produto, o escopo da POC, suas pri
 | [Arquitetura inicial](drafts/arquitetura-inicial.md) | Base aprovada, responsabilidades dos componentes, diagrama, identidade, precisão das notas e detalhes de implementação pendentes. |
 | [Roteiro da POC](drafts/plano-da-poc.md) | Sequência de implementação e critérios de conclusão e validação. As etapas estão planejadas, não executadas. |
 | [Hospedagem inicial](drafts/hospedagem-inicial.md) | Restrições de orçamento, referências de preços consultadas em 19/10/2026 e proposta de dimensionamento a validar. |
+| [ADRs](adr/README.md) | Decisões de produto, arquitetura e processo, com contexto, consequências e versão correspondente da constituição. |
+| [Specs de Épicos e Features](specs/README.md) | Hierarquia de trabalho, estados, resultados entregues e pendências de conclusão. |
 
 Os arquivos permanecem em `drafts/` porque o detalhamento técnico continuará durante a implementação. As decisões indicadas como confirmadas formam a base atual do projeto.
+
+## Desenvolvimento com Jarvis
+
+O [Jarvis](../.jarvis/README.md) reúne a constituição revisada, o fluxo de
+desenvolvimento orientado por especificações e os templates deste repositório.
+A revisão inicial da constituição foi concluída na versão 0.10. A
+[integração das ferramentas](../.jarvis/integrations/README.md) registra skills
+e perfis locais do Codex; os [contratos dos agentes](specs/features/FEAT-004-contratos-dos-agentes.md)
+foram revisados, com decisões até a versão 0.19 e cinco skills descobertas no
+Codex. A execução independente dos perfis ainda não foi realizada. Testes no
+OpenCode e Claude Code aguardam disponibilidade. Sua base é
+compartilhada entre Codex, Claude Code e OpenCode e preserva as decisões de
+produto e arquitetura dos documentos acima. Toda mudança tem spec na hierarquia Épico e Feature,
+com documentos duradouros em `docs/specs/`. O plano e as specs das tarefas
+ficam no documento temporário de trabalho da branch; resultados e evidências
+são consolidados na Feature antes de encerrar esse documento.
+
+Cada decisão adotada gera um ADR e uma nova versão da constituição, preservando
+as cópias anteriores. Decisões já existentes na descoberta continuam nas fontes
+atuais e no histórico; sua migração integral para ADRs ainda não foi realizada.
 
 ## Referências históricas
 

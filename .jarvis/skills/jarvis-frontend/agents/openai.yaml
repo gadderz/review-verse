@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jarvis Frontend"
+  short_description: "Implementa e testa a interface e integração com a API"

@@ -1,0 +1,185 @@
+# Constituição do Jarvis — ReviewVerse
+
+Versão: 0.6, em revisão conjunta com o autor.
+Produto e escopo do artigo 1, a hierarquia de specs do artigo 2, a política de
+testes do artigo 5, a convenção de commits do artigo 8 e o registro de decisões
+do artigo 9 foram confirmados pelo autor. Os demais princípios continuam como
+proposta inicial de trabalho.
+
+## 1. Produto e escopo orientam a solução
+
+Cada mudança deve atender a uma necessidade identificável do ReviewVerse,
+estar vinculada a um Épico e uma Feature e ter resultado verificável. Respeitar
+o escopo autorizado para a entrega atual e manter a visão futura identificada
+como evolução prevista.
+
+Preferir a solução mais simples que atenda às regras e aos critérios acordados.
+Justificar novas abstrações, componentes ou integrações por requisitos atuais,
+restrições confirmadas ou evidências observadas, mantendo limites claros para
+a evolução do projeto.
+
+Consultar as restrições de orçamento e as metas de capacidade na visão e na
+arquitetura atuais. Propostas de infraestrutura devem considerar o custo completo;
+afirmações de capacidade devem ser sustentadas por medições.
+
+## 2. Toda mudança tem spec na hierarquia Épico e Feature
+
+Toda mudança, inclusive correções e ajustes editoriais, deve estar especificada
+na hierarquia Épico → Feature → tarefas do documento de trabalho. Reusar specs
+existentes quando o escopo já estiver contemplado; uma tarefa pequena não exige
+criar outro Épico ou Feature, mas precisa ter seu resultado e verificação definidos.
+
+Épicos e Features têm specs duradouras, com estado, o que já foi feito e o que
+falta para concluir. Cada Épico relaciona suas Features; cada Feature referencia
+seu Épico. O Épico define objetivo, escopo, limites e condições de conclusão;
+a Feature define comportamento, critérios de aceitação e dependências.
+
+O plano técnico e as specs das tarefas menores ficam em um documento de
+trabalho por branch que executa a Feature. Ele identifica a branch e a Feature,
+registra resultados esperados, progresso, impedimentos, verificações e próxima
+ação. É temporário no ciclo de execução, mas versionado enquanto ativo para
+permitir continuidade entre sessões e ferramentas.
+
+Antes de removê-lo, consolidar resultados, pendências e evidências na Feature,
+atualizar o progresso do Épico e preservar decisões duradouras em ADRs. Não
+remover um plano com execução pendente sem transferir o contexto para a retomada.
+Correções posteriores podem reusar a Feature e abrir outro documento de trabalho.
+
+Usar os estados Rascunho, Planejado, Em andamento, Bloqueado e Concluído. Uma
+Feature só está concluída com seus critérios atendidos e evidências registradas.
+Um Épico exige suas condições de conclusão e Features concluídas ou retiradas
+do escopo por decisão registrada. Manter pendências explícitas enquanto existirem.
+
+Separar comportamento esperado de solução técnica. Dúvidas materiais devem ser
+explicitadas; uma hipótese não vira requisito por ter sido escrita pelo agente.
+O [índice de specs](../docs/specs/README.md) descreve os arquivos e o acompanhamento.
+
+## 3. Decisões, propostas e evidências têm estados distintos
+
+Usar a visão atual para regras de produto, a arquitetura atual para decisões
+técnicas e o código observado para o estado implementado. O roteiro registra
+entregas planejadas; referências históricas não substituem decisões atuais.
+
+Uma spec detalha o recorte da mudança. Ela não revoga silenciosamente uma regra
+confirmada: registrar a decisão do autor e atualizar sua fonte quando houver
+alteração. Em caso de contradição material, expor o conflito antes de implementar
+o comportamento afetado. Continuar o trabalho independente dessa dúvida.
+
+## 4. A arquitetura aprovada guia a evolução
+
+A base confirmada é API .NET modular, Worker separado, PostgreSQL, Next.js e
+Keycloak. A divisão proposta em Catálogo, Backlog, Reviews e Perfil ainda exige
+detalhamento dos contratos e da organização dos projetos.
+
+Implementar limites explícitos de responsabilidade. Compartilhar implantação ou
+banco não justifica misturar regras entre módulos. As propostas de contratos,
+transações e acesso a dados devem ser resolvidas no plano da mudança pertinente.
+Não inferir dependências obrigatórias a partir do desenho histórico ou de um
+pacote já referenciado no esqueleto atual.
+
+## 5. Regras devem ser verificadas onde são aplicadas
+
+Regras de domínio, autorização e condições de publicação precisam ser aplicadas
+pela API, além da interface. Verificar comportamentos relevantes para a mudança,
+incluindo persistência e concorrência quando afetarem invariantes como unicidade
+e sincronização. Os exemplos de domínio estão nas especificações do produto.
+
+Toda regra de negócio nova ou alterada e toda correção de bug devem ter testes
+automatizados pertinentes. Os testes devem verificar o comportamento esperado;
+nas correções, devem cobrir o cenário que causava a falha para prevenir regressão.
+
+Exceções precisam de justificativa registrada junto às evidências da mudança,
+indicando o motivo, o risco remanescente e a verificação alternativa realizada.
+A ausência de infraestrutura de testes, por si só, não dispensa essa obrigação.
+
+TDD é opcional: a ordem entre escrever testes e implementar pode variar conforme
+a tarefa. Não há exigência geral de framework ou percentual de cobertura.
+Verificações manuais complementam os testes quando necessárias; ajustes apenas
+editoriais seguem a verificação proporcional prevista no fluxo.
+
+## 6. Uma entrega exige evidência e documentação coerente
+
+Vincular critérios de aceitação às verificações realizadas. Diferenciar passou,
+falhou e não executado, informando limitações. Código escrito, tarefa marcada ou
+comando de build bem-sucedido não comprovam por si só o fluxo completo da POC.
+
+Manter a spec e as fontes afetadas coerentes com a mudança entregue. Registrar
+pendências que impeçam conclusão e não apresentar integrações planejadas como
+funcionais. Ao encerrar, deixar claro o que mudou e como foi verificado.
+
+## 7. O processo deve ser portátil e proporcional
+
+Guardar decisões, especificações e evidências em arquivos versionados. Manter
+as regras comuns independentes de modelos e ferramentas; adaptar somente a
+descoberta e os recursos específicos de cada ambiente. Carregar contexto conforme
+a tarefa, evitando copiar a documentação inteira para os pontos de entrada.
+
+A autorização já dada pelo usuário vale durante a tarefa. O Jarvis não exige
+reconfirmação de cada etapa nem autoriza ampliar o escopo por conta própria.
+Se a tarefa pedida for somente especificar ou revisar, respeitar esse limite.
+
+## 8. Commits em inglês e no padrão Conventional Commits
+
+As mensagens de commit devem ser escritas em inglês, incluindo descrição,
+corpo e explicações nos rodapés quando presentes, e seguir
+[Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
+
+Usar o formato `<type>[optional scope][!]: <description>`, com escopo opcional.
+Usar `feat` para novas funcionalidades, `fix` para correções de bugs e outros
+tipos conforme a natureza da mudança, como `docs`, `refactor`, `test` e `chore`.
+Indicar mudanças incompatíveis com `!` antes de `:` ou com o rodapé
+`BREAKING CHANGE:`, conforme a especificação.
+
+Exemplos:
+
+- `feat(catalog): add platform filter`
+- `fix(reviews): prevent duplicate reviews per platform`
+- `docs(jarvis): define commit message conventions`
+
+## 9. Cada decisão deve ter ADR e uma nova versão
+
+Registrar cada decisão adotada em um novo ADR numerado em `docs/adr/`, com
+contexto, decisão, consequências, origem da autorização e versão correspondente
+da constituição. A regra abrange decisões de produto, arquitetura e processo.
+Uma proposta ou hipótese ainda não adotada deve continuar identificada como tal.
+
+Cada decisão adotada gera sua própria versão da constituição, seguindo a
+sequência atual: `0.6`, `0.7`, `0.8` e assim por diante. Não agrupar decisões
+independentes em uma única versão. Registrar a versão mesmo quando a decisão
+altera somente uma fonte de produto ou arquitetura; nesse caso, atualizar o
+histórico da constituição e manter seus princípios.
+
+Preservar uma cópia textual de cada nova versão em
+`.jarvis/versions/<versao>.txt` e manter este arquivo como a versão atual.
+Atualizar também o índice de ADRs e as fontes afetadas pela decisão. Ajustes
+apenas editoriais não constituem uma nova decisão e não geram versão.
+
+Uma mudança de decisão exige outro ADR, com referência ao registro substituído.
+Preservar o conteúdo original dos ADRs aceitos e das versões arquivadas; nos
+ADRs antigos, atualizar apenas o estado e os vínculos de substituição quando
+necessário. O [índice de ADRs](../docs/adr/README.md) define o procedimento.
+
+## Evolução da constituição
+
+Propor mudanças com motivo e impacto sobre o trabalho existente. Mudanças de
+princípios e decisões novas de produto ou arquitetura devem ser discutidas com o
+autor. Escolhas técnicas dentro do escopo já autorizado seguem a autonomia
+prevista no artigo 7. Registrar as decisões adotadas conforme o artigo 9, sem
+exigir nova confirmação quando a autorização existente já for suficiente.
+
+### Histórico de decisões e versões
+
+| Versão | Decisão |
+| --- | --- |
+| 0.1 | Proposta inicial de constituição, ainda em revisão. |
+| 0.2 | [ADR-0001 — Testes automatizados por comportamento](../docs/adr/0001-testes-automatizados-por-comportamento.md). |
+| 0.3 | [ADR-0002 — Commits em inglês e Conventional Commits](../docs/adr/0002-commits-em-ingles-e-conventional-commits.md). |
+| 0.4 | [ADR-0003 — ADRs e uma nova versão por decisão](../docs/adr/0003-adrs-e-versionamento-por-decisao.md). |
+| 0.5 | [ADR-0004 — Especificações hierárquicas e documento de trabalho](../docs/adr/0004-especificacoes-hierarquicas-e-documento-de-trabalho.md). |
+| 0.6 | [ADR-0005 — Produto, escopo e simplicidade](../docs/adr/0005-produto-escopo-e-simplicidade.md). |
+
+O [arquivo de versões](versions/README.md) preserva as cópias disponíveis.
+O histórico de decisões anteriores do produto permanece em
+`docs/referencias/historico-de-decisoes.md`; sua migração integral para ADRs
+ainda não foi realizada. Propostas iniciais não se tornam aceitas por constarem
+neste histórico.

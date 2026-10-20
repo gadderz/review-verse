@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jarvis Backend"
+  short_description: "Implementa e testa API, domínio, Worker e integrações"

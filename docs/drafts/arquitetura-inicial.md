@@ -118,7 +118,7 @@ Se a mesma pessoa quiser usar Google e Steam na mesma conta, propõe-se associa�
 
 “Realm” no domínio do ReviewVerse significa Jogos, Animes/Mangás ou Filmes/Séries. Isso é distinto de um realm do Keycloak, que organiza identidade. A proposta inicial é usar um realm de identidade para a aplicação em cada ambiente, sem criar um realm do Keycloak para cada reino de mídia.
 
-Cada módulo seria responsável por suas tabelas, regras e migrações. Operações entre módulos passariam por contratos internos explícitos. Mesmo compartilhando a implantação e o banco, módulos não escreveriam diretamente nas tabelas de outros módulos. A base de arquitetura aprovada orientará uma futura revisão da estrutura de projetos existente; essa reorganização ainda não foi executada.
+Cada módulo é responsável por suas regras de negócio e seus dados. Operações entre módulos passam por contratos explícitos, e um módulo não escreve diretamente nas tabelas de outro, mesmo compartilhando implantação ou banco. Mudanças que atravessem módulos devem explicitar coordenação, consistência e tratamento de falhas no plano de execução. Esses princípios foram confirmados no [ADR-0007](../adr/0007-limites-de-modulos-e-evolucao-da-arquitetura.md), correspondente à constituição 0.8. Organização de tabelas, migrações e projetos continua em detalhamento. A base aprovada orientará uma futura revisão da estrutura de projetos existente; essa reorganização ainda não foi executada.
 
 ## Operação e crescimento
 
