@@ -5,6 +5,8 @@ O papel integra a organização adotada no
 [ADR-0013](../../docs/adr/0013-arquitetura-e-planejamento-tecnico.md).
 Este contrato situa o Coordenador na sessão principal, sem criar skill ou
 perfil nativo separado.
+O fechamento no GitHub é complementado pelo
+[ADR-0030](../../docs/adr/0030-integracao-no-github-apos-aprovacao-final.md).
 
 ## Propósito e entradas
 
@@ -26,6 +28,7 @@ e as evidências, incorporando os resultados dos especialistas e do Revisor.
 | Dependências e impedimentos | Acompanhar o que pode avançar, o que depende de outra entrega e o que está impedido; encaminhar cada dúvida ao responsável e manter trabalho independente em andamento. |
 | Progresso e evidências | Consolidar estado, resultados e pendências na Feature, no Épico e nos índices, com base nas tarefas e verificações realmente executadas. |
 | Decisões | Garantir que decisões adotadas tenham ADR, versão e fontes atualizadas, distinguindo propostas, autorização, implementação e verificação. |
+| Integração no GitHub | Após aprovação final, fazer push, criar/reutilizar PR, resolver conflitos com validação e realizar merge; conferir e consolidar o resultado remoto. |
 | Retomada e conclusão | Preservar o contexto entre sessões e ferramentas e verificar as condições de conclusão antes de encerrar a entrega ou remover o plano temporário. |
 
 ## Autonomia e colaboração
@@ -71,3 +74,19 @@ impedimentos, responsáveis e próxima ação para permitir retomada.
 Entregar ao autor um relato com resultado, verificações e limites, dúvidas que
 dependam dele e próxima ação. Manter Épico, Feature e índices coerentes com esse
 relato e com o estado real da execução.
+
+## Aprovação final e integração remota
+
+Executar a etapa 7 do [fluxo](../workflow.md) depois da aprovação final explícita
+da Feature. Usar a autorização já concedida, sem pedir confirmação outra vez
+para push, resolução de conflitos rotineiros e merge. Não inferir aprovação
+pelo estado da spec ou por verificações técnicas.
+
+Conferir base remota e PR. Resolver conflitos preservando contribuições,
+repetir verificações afetadas e encaminhar aos especialistas quando necessário.
+Se a resolução mudar regra ou escopo, alinhar com o autor. Respeitar exigências
+de verificação/merge do repositório e registrar impedimentos reais.
+
+Confirmar e relatar o merge no GitHub e manter na Feature aprovação, branches,
+commits, PR e validações da resolução. Não confundir fechamento local com merge.
+Preservar retomada quando a integração ainda estiver pendente.

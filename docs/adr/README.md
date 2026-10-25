@@ -37,6 +37,7 @@ adotada tem seu próprio ADR e uma nova versão da constituição.
 | [ADR-0027](0027-busca-literal-com-unaccent.md) | Busca literal e agregação no PostgreSQL | Aceito | 0.28 |
 | [ADR-0028](0028-contrato-http-da-consulta-de-jogos.md) | Contrato HTTP da consulta de jogos | Aceito | 0.29 |
 | [ADR-0029](0029-verificacao-do-catalogo-com-postgresql-isolado.md) | Verificação do Catálogo com PostgreSQL isolado | Aceito | 0.30 |
+| [ADR-0030](0030-integracao-no-github-apos-aprovacao-final.md) | Integração no GitHub após aprovação final | Aceito | 0.31 |
 
 Os dois primeiros ADRs registram retrospectivamente decisões já confirmadas
 pelo autor nesta conversa. Mantêm as versões que essas decisões já receberam;

@@ -58,6 +58,16 @@ nos ADRs antes de remover o documento temporário.
 - Para mensagens de commit, siga a convenção em inglês definida no artigo 8 da
   constituição.
 
+## Integração no GitHub
+
+Após aprovação final explícita do autor para a Feature, o Coordenador faz push
+da branch, cria ou reutiliza o PR e realiza o merge no GitHub, conforme a etapa 7
+do fluxo e o ADR-0030. Reusar a aprovação existente sem pedir confirmação por
+comando. Resolver conflitos preservando contribuições e repetir verificações
+afetadas; mudanças materiais de regra/escopo retornam ao autor. Registrar na
+Feature aprovação, PR, commits e resultado remoto ou impedimento de integração.
+Não inferir aprovação final ou merge pelo estado Concluído ou por commit local.
+
 ## Verificação
 
 Para mudanças .NET, o comando de compilação da solução é

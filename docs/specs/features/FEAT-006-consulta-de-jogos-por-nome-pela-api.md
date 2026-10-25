@@ -242,8 +242,38 @@ as verificações sem depender do plano temporário ou de TRX local. As decisõe
 permanecem nos ADRs 0019 a 0029 e nas versões 0.20 a 0.30, sem alterar registros
 anteriores. Commit preparado: `feat(catalog): add game search by name`.
 
+## Aprovação final e integração no GitHub
+
+O padrão foi acrescentado depois da entrega local, pelo
+[ADR-0030](../../adr/0030-integracao-no-github-apos-aprovacao-final.md).
+
+- Entrega técnica: concluída no commit local `5be4309`.
+- Aprovação final para integração: autor respondeu “feature aprovada” em
+  25/10/2026 à pergunta explícita sobre incluir a FEAT-006 (`5be4309`) na
+  integração. A aprovação da FEAT-007 já havia sido registrada separadamente.
+- Origem: `feat/006-game-search-api`; remoto `origin`; destino `main`.
+- Push: executado em 25/10/2026 para `origin/feat/006-game-search-api`,
+  preservando `5be4309f67fb93d0024d6aaec945e0568b108dcc`.
+- PR: [#1 — feat(catalog): add game search by name](https://github.com/gadderz/review-verse/pull/1),
+  criado pelo GitHub CLI autenticado após configuração pelo autor. A tentativa
+  anterior pelo conector havia falhado com HTTP 403,
+  `Resource not accessible by integration`.
+- Merge confirmado no GitHub em 25/10/2026 às 21:29:16 UTC:
+  `13851ab714712cc4e33a08970095407c1f153c71`, com estado `MERGED`.
+  A referência `origin/main` foi atualizada por fetch; sua árvore é idêntica
+  à entrega aprovada `5be4309`. Não houve conflitos ou resolução de código.
+- Exigências remotas conferidas: main sem proteção ou regras aplicáveis;
+  PR com estado `CLEAN`/`MERGEABLE`, sem checks configurados nem revisões
+  obrigatórias. Não houve bypass administrativo. O merge verificou o SHA
+  esperado da branch, preservando o commit original.
+- Verificações desta integração: `git diff --check` passou; código, testes,
+  Compose e manifesto de ferramentas permanecem idênticos ao commit aprovado.
+  Build e suítes não foram repetidos, pois não houve alteração nessas áreas.
+- Pendências de integração desta Feature: nenhuma. Prosseguir com a FEAT-007
+  em seu PR próprio, reutilizando a aprovação existente.
+
 ## Próxima ação
 
 Usar o guia local para consumir a consulta e especificar a próxima Feature do
 Catálogo, incluindo a importação IGDB em seu próprio recorte. Consultar o
-histórico Git desta branch para o commit da entrega; não houve merge ou publicação.
+histórico Git para o commit da entrega. A integração tem acompanhamento acima.

@@ -1,6 +1,6 @@
 # Constituição do Jarvis — ReviewVerse
 
-Versão: 0.30, revisão inicial concluída com o autor.
+Versão: 0.31, revisão inicial concluída com o autor.
 Os princípios dos artigos 1 a 9 estão confirmados pelas decisões registradas
 neste documento. A evolução da constituição continua pelo procedimento de ADRs.
 
@@ -126,6 +126,15 @@ informar o que mudou, como foi verificado e as pendências reais. Compilação
 bem-sucedida, tarefas marcadas e encerramento de branch não substituem os
 critérios de aceitação.
 
+Após a aprovação final explícita do autor para a Feature, o fechamento inclui
+push da branch, criação ou reutilização do pull request e merge no GitHub para
+a branch de destino acordada. O Coordenador executa essa integração sem pedir
+nova confirmação para ações já aprovadas, resolve conflitos preservando as
+contribuições existentes e repete as verificações afetadas antes do merge.
+Mudanças materiais de comportamento ou escopo retornam ao autor. Registrar
+aprovação, PR, commits e resultado remoto; entrega local não comprova merge.
+Se a integração não puder ser concluída, preservar a pendência e a retomada.
+
 ## 7. O processo deve ser portátil e proporcional
 
 Manter princípios, especificações, decisões e evidências em arquivos versionados
@@ -172,7 +181,7 @@ da constituição. A regra abrange decisões de produto, arquitetura e processo.
 Uma proposta ou hipótese ainda não adotada deve continuar identificada como tal.
 
 Cada decisão adotada gera sua própria versão da constituição, seguindo a
-sequência atual: `0.30`, `0.31`, `0.32` e assim por diante. Não agrupar decisões
+sequência atual: `0.31`, `0.32`, `0.33` e assim por diante. Não agrupar decisões
 independentes em uma única versão. Registrar a versão mesmo quando a decisão
 altera somente uma fonte de produto ou arquitetura; nesse caso, atualizar o
 histórico da constituição e manter seus princípios.
@@ -229,6 +238,7 @@ exigir nova confirmação quando a autorização existente já for suficiente.
 | 0.28 | [ADR-0027 — Busca literal e agregação no PostgreSQL](../docs/adr/0027-busca-literal-com-unaccent.md). |
 | 0.29 | [ADR-0028 — Contrato HTTP da consulta de jogos](../docs/adr/0028-contrato-http-da-consulta-de-jogos.md). |
 | 0.30 | [ADR-0029 — Verificação do Catálogo com PostgreSQL isolado](../docs/adr/0029-verificacao-do-catalogo-com-postgresql-isolado.md). |
+| 0.31 | [ADR-0030 — Integração no GitHub após aprovação final](../docs/adr/0030-integracao-no-github-apos-aprovacao-final.md). |
 
 O [arquivo de versões](versions/README.md) preserva as cópias disponíveis.
 O histórico de decisões anteriores do produto permanece em
