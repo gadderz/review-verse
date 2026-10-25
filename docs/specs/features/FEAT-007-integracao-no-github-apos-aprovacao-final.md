@@ -50,8 +50,8 @@ Não exige cliente específico e não inclui push/merge sem aprovação final.
 
 ## O que falta
 
-Nenhuma pendência no recorte documental. Aprovação final e integração remota
-continuam com seu estado real na seção própria, sem integração presumida.
+Nenhuma pendência no recorte documental. Aprovação final recebida; integração
+remota depende de resolver a inclusão da FEAT-006, conforme a seção própria.
 
 ## Evidências
 
@@ -69,20 +69,28 @@ de testes de negócio. Push, PR e merge não foram executados como teste da regr
 ## Aprovação final e integração no GitHub
 
 - Aprovação da decisão: pedido do autor registrado no ADR-0030.
-- Aprovação final desta entrega para integração: ainda não registrada.
-- Origem: `feat/007-github-feature-close`; remoto `origin`; destino a conferir.
-- Push, PR, conflitos e merge: não executados nesta etapa documental.
-- Retomada: após aprovação final, conferir a base remota e executar a etapa 7.
+- Aprovação final desta entrega para integração: autor respondeu “feature
+  aprovada” após a revisão do commit `f1388a3`, em 25/10/2026, nesta sessão.
+- Origem: `feat/007-github-feature-close`; remoto `origin`; destino `main`,
+  confirmado como branch padrão pelo GitHub.
+- Base remota atualizada por `git fetch origin`: `279d51c` em 25/10/2026.
+  A diferença inclui `5be4309` (FEAT-006) e `f1388a3` (FEAT-007).
+- Push, PR, conflitos e merge: não executados nesta retomada. Consulta ao
+  GitHub não encontrou PRs existentes para reutilizar.
+- Dependência: a FEAT-006 ainda não está na base remota. Além da ancestralidade
+  Git, a constituição 0.31 referencia os ADRs 0019 a 0029, incorporados pela
+  FEAT-006. Publicar/integrar esta branch completa também incluiria essa entrega.
+- Retomada: pergunta enviada ao autor sobre incluir a FEAT-006 na aprovação.
+  A aprovação da FEAT-007 permanece válida, sem necessidade de reconfirmação.
+  Com a dependência autorizada, executar a etapa 7 respeitando o recorte aprovado.
 
 ## Próxima ação
 
-Regra documental concluída. Quando uma entrega receber aprovação final, executar
-sua integração conforme a etapa 7. Para FEAT-006, o autor foi consultado sobre
-aprovar agora o commit 5be4309; não houve resposta de aprovação nesta etapa.
-Para publicar esta FEAT-007, registrar sua própria aprovação final e conferir
-as diferenças da branch; ela deriva da entrega local FEAT-006.
+Regra documental concluída e aprovada. Resolver com o autor a inclusão da
+FEAT-006 na integração, preservando sua entrega local `5be4309`, e executar a
+etapa 7 quando o conjunto a integrar estiver autorizado.
 
 O documento de trabalho é preservado para eventual integração posterior.
-Commit local preparado em inglês: `docs(jarvis): require GitHub integration after final approval`.
-Consultar o histórico da branch para seu identificador; não confundir esse commit
-com publicação remota.
+Commit local da entrega: `f1388a3`,
+`docs(jarvis): require GitHub integration after final approval`.
+Esse commit não comprova publicação remota.

@@ -44,28 +44,50 @@ O que foi feito: conferidos 16 arquivos, 219 links locais, cenários, tabelas e
 Passou git diff --check, incluindo arquivos novos; resultados na Feature.
 O que falta: nenhuma pendência de verificação documental.
 
+### T-03 — Integrar a entrega aprovada no GitHub
+
+Estado: Em andamento
+Atende: fechamento da entrega conforme ADR-0030 e etapa 7 do fluxo.
+Responsável: Coordenador na sessão principal.
+Dependências: aprovação final da FEAT-007 recebida; autorização da inclusão da
+FEAT-006 ainda em esclarecimento, pois também consta nas diferenças para main.
+Objetivo: publicar e integrar somente o conjunto autorizado.
+Resultado esperado: aprovação, branches, PR, verificações e resultado remoto
+registrados na Feature; impedimentos e próxima ação preservados quando houver.
+Arquivos ou componentes: specs, índices, branch e PR no GitHub.
+Verificação prevista: base remota atualizada, diferenças conferidas, links locais,
+git diff --check, checks/revisões remotos e confirmação do resultado do merge.
+O que foi feito: aprovação da FEAT-007 registrada; branch padrão main confirmada
+no GitHub; fetch origin executado; nenhum PR encontrado para reutilizar.
+O que falta: resolver a autorização da FEAT-006 antes de publicar o conjunto,
+criar o PR, conferir exigências remotas e integrar.
+
 ## Evidências
 
 | Tarefa | Verificação | Resultado |
 | --- | --- | --- |
 | T-01 | Branch e árvore inicial | FEAT-006 limpa; ramo documental criado, preservando 5be4309. |
 | T-02 | Conferência documental | Passou: links, estados, cenários, integridade, snapshot e git diff --check. |
+| T-03 | Registro da aprovação e dependência | Passou: 32 links locais em quatro arquivos, git diff --check e constituição idêntica ao snapshot 0.31; nenhuma alteração de código, ADR ou versão. |
 
 ## Aprovação e integração no GitHub
 
-- Regra autorizada; integração das entregas depende de aprovação final.
-- FEAT-007: aprovação final pendente; push/PR/merge não executados.
-- FEAT-006: pergunta enviada ao autor sobre integrar agora o commit 5be4309.
-- O eventual aceite da FEAT-006 não publica automaticamente a FEAT-007.
+- FEAT-007: aprovação final recebida em 25/10/2026, mensagem “feature aprovada”
+  após a revisão de f1388a3. A aprovação permanece válida para a integração.
+- FEAT-006: pergunta enviada ao autor sobre incluir o commit 5be4309 na aprovação.
+- Origin/main atualizado por fetch: 279d51c. GitHub confirma main como padrão e
+  não retornou PRs existentes. A diferença inclui ambas as Features; a versão
+  0.31 também depende dos registros de decisão incorporados pela FEAT-006.
+- Push/PR/merge ainda não executados; falta autorização para a dependência.
 - `gh` não está instalado; cliente específico não é requisito da regra.
   Ferramentas GitHub disponíveis, ainda sem uso para publicação ou merge.
 
 ## Retomada e consolidação
 
-- Feito: decisão e fontes do processo redigidas.
-- Falta: eventual integração, que depende da aprovação final da entrega;
-  documentação já verificada e consolidada.
-- Próxima ação: se FEAT-006 for aprovada, atuar na branch/commit
-  correspondentes, preservando a separação das alterações da FEAT-007.
+- Feito: decisão e fontes do processo redigidas, revisão documental concluída,
+  aprovação final da FEAT-007 recebida e base remota conferida.
+- Falta: autorização da inclusão da FEAT-006 e execução da integração remota.
+- Próxima ação: incorporar a resposta sobre a dependência e executar a etapa 7
+  com o conjunto autorizado, sem reconfirmar a aprovação da FEAT-007.
 - Antes de remover: consolidar resultados e retomada na Feature sem declarar
   ações remotas não executadas ou perder contexto da integração pendente.
