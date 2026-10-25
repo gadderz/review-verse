@@ -6,6 +6,24 @@ Feature. A massa local contém 25 jogos fictícios.
 
 ## Preparar
 
+Para execução gerenciada no macOS/Linux, com Python 3, SDK .NET 10 e Docker ativo:
+
+```sh
+python3 .jarvis/scripts/local_environment.py start
+python3 .jarvis/scripts/local_environment.py status
+python3 .jarvis/scripts/local_environment.py stop
+```
+
+O auxiliar prepara o Catálogo e PostgreSQL e verifica uma consulta HTTP real.
+API/Scalar usam `http://127.0.0.1:5080`; `--port 5081` troca a porta.
+`--no-seed` evita reaplicar os 25 jogos fictícios. `--identity` inicia também
+Keycloak e seu PostgreSQL, sem alegar teste funcional dessa integração.
+Serviços já ativos são reutilizados e preservados na parada. PIDs com identidade,
+IDs dos contêineres iniciados e logs privados ficam em `.jarvis/runtime/`,
+ignorado pelo Git; `setup.log` registra preparação e `catalog-api.log` o host.
+Volumes não são apagados. Worker e frontend ainda não estão funcionais e não
+são iniciados como se estivessem prontos. Os passos manuais abaixo permanecem disponíveis.
+
 Requisitos: SDK .NET 10, Docker e Compose. Confira `dotnet --list-sdks` e
 `docker context show`. Copie `.env.example` para `.env` se ainda não tiver
 configuração local e ajuste as senhas. `.env` é ignorado pelo Git.

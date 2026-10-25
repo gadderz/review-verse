@@ -72,8 +72,9 @@ e transferir resultados reais à Feature antes de remover este arquivo.
 
 ## Consolidação para encerrar
 
+- [ ] Plano inicial recuperável em commit anterior à implementação; SHA registrado na Feature.
 - [ ] Resultados, pendências e evidências transferidos para a Feature.
-- [ ] Decisões duradouras preservadas nos ADRs e fontes afetadas atualizadas.
+- [ ] Decisões relevantes em ADRs; escolhas locais na spec/plano e fontes atualizadas.
 - [ ] Progresso do Épico e índice de specs atualizados.
 - [ ] Trabalho restante tem contexto de retomada preservado ou não há pendências.
 - [ ] Registros duradouros não dependem deste arquivo para consultar evidências.

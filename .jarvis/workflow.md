@@ -29,9 +29,10 @@ dispensar objetivo, resultado esperado e verificação.
 
 Separar dúvidas de comportamento de escolhas técnicas. Perguntar ao autor
 quando a resposta mudar uma regra, o escopo ou uma decisão confirmada. Resolver
-escolhas rotineiras dentro da autorização existente. Cada decisão adotada exige
-ADR e versão próprios, conforme o [procedimento de ADRs](../docs/adr/README.md),
-antes de orientar a execução. Hipóteses ainda abertas não viram requisitos.
+escolhas rotineiras dentro da autorização existente. Decisões estruturais ou
+relevantes exigem ADR e versão, conforme o [procedimento de ADRs](../docs/adr/README.md).
+Detalhes de Feature ficam na spec/plano antes da execução afetada; hipóteses
+ainda abertas não viram requisitos.
 
 Uma Feature pode ser Planejada quando escopo e critérios estiverem definidos e
 as dúvidas restantes não impedirem sua execução. Esse estado não substitui a
@@ -66,6 +67,11 @@ O documento é temporário no ciclo de execução e acompanha a branch enquanto
 ativo. Deve poder ser versionado junto ao trabalho; não ocultá-lo por padrão
 no `.gitignore`. Não depender apenas da memória da conversa.
 
+Ao terminar o planejamento autorizado, fazer commit do documento de trabalho
+antes de iniciar a implementação dependente. Atualizá-lo nos commits dos marcos
+de execução e antes de transferir o trabalho entre sessões. Um pedido apenas de
+planejamento permite registrar esse plano, sem autorizar implementar o produto.
+
 ## 4. Executar e acompanhar
 
 [Backend](agents/backend.md) e [Frontend](agents/frontend.md) detalham e atualizam
@@ -82,7 +88,7 @@ também sua linha no Épico e no índice de specs. O progresso das tarefas vive 
 documento de trabalho; o resultado da Feature permanece na spec duradoura.
 
 Se evidências exigirem ajustar a abordagem dentro do escopo, atualizar o plano.
-Mudanças de decisões duradouras seguem o fluxo de ADRs. Não ampliar a entrega
+Mudanças de decisões relevantes seguem o fluxo de ADRs. Não ampliar a entrega
 silenciosamente. Diante de impedimento, registrar sua causa, o que falta resolver
 e a próxima ação, mantendo o trabalho independente em andamento quando possível.
 
@@ -108,15 +114,20 @@ Antes de encerrar ou remover o documento de trabalho:
 
 1. Transferir para a Feature os resultados, as evidências, os critérios atendidos
    e o que ainda falta. Manter referências que continuem acessíveis após a remoção.
-2. Registrar decisões duradouras em ADRs, com suas versões arquivadas, e atualizar
+2. Registrar decisões relevantes em ADRs, com suas versões arquivadas, e atualizar
    as fontes de produto, arquitetura ou processo afetadas.
 3. Atualizar o Épico e o índice de specs. Concluir a Feature apenas com critérios
-   atendidos; retirar critérios ou Features do escopo exige decisão registrada.
+   atendidos; retirar critérios ou Features do escopo exige decisão do autor
+   registrada na spec e ADR quando o impacto atender ao artigo 9.
 4. Conferir se outra sessão consegue retomar pendências sem o documento temporário.
    Se houver trabalho pendente, preservá-lo ou transferir seu contexto para o
    documento de trabalho da branch que continuará a execução.
 5. Remover o documento temporário somente após consolidar e transferir seu contexto.
    Preservar as specs duradouras e o histórico versionado do trabalho integrado.
+
+Antes de remover o plano, conferir que `git log -- <caminho-do-plano>` permite
+recuperar pelo menos sua versão inicial. Não criar e remover o plano sem um
+commit intermediário que o preserve; registrar esse commit na Feature.
 
 O Épico só é Concluído com suas condições atendidas e Features concluídas ou
 formalmente retiradas do escopo. Encerrar uma branch não conclui automaticamente

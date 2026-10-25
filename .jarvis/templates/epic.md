@@ -34,4 +34,5 @@ instruções. Use os estados definidos em `docs/specs/README.md`.
 ## Próxima ação
 
 <Ação concreta para avançar ou indicação de conclusão. Retiradas de Features
-do escopo precisam de ADR; preservar seu vínculo e a decisão correspondente.>
+do escopo precisam de decisão registrada e ADR quando o impacto exigir;
+preservar seu vínculo e a decisão correspondente.>

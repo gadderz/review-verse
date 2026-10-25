@@ -32,8 +32,11 @@ com documentos duradouros em `docs/specs/`. O plano e as specs das tarefas
 ficam no documento temporário de trabalho da branch; resultados e evidências
 são consolidados na Feature antes de encerrar esse documento.
 
-Cada decisão adotada gera um ADR e uma nova versão da constituição, preservando
-as cópias anteriores. Decisões já existentes na descoberta continuam nas fontes
+Decisões estruturais ou relevantes geram ADR e versão da constituição; detalhes
+de Feature ficam nas specs e planos. Preservamos as cópias anteriores.
+As skills `jarvis-cleanup`, `jarvis-run` e `jarvis-stop` apoiam compactação de
+Features encerradas e uso manual do ambiente local, conforme a FEAT-008.
+Decisões já existentes na descoberta continuam nas fontes
 atuais e no histórico; sua migração integral para ADRs ainda não foi realizada.
 
 ## Referências históricas

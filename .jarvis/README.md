@@ -3,9 +3,9 @@
 Base local de desenvolvimento orientado por especificações (SDD, de
 *Specification-Driven Development*) para o ReviewVerse.
 
-Status: constituição revisada e decisões registradas até a versão 0.31.
+Status: constituição revisada e decisões registradas até a versão 0.33.
 Seis contratos adotados, com desenho e planejamento técnico sob o Arquiteto.
-Cinco skills descobertas no Codex e cinco perfis locais configurados e conferidos
+Oito skills descobertas no Codex e cinco perfis locais configurados e conferidos
 estruturalmente. Execução independente dos perfis e testes no OpenCode e Claude
 Code continuam pendentes.
 
@@ -48,10 +48,11 @@ responsável pelo produto e pela arquitetura; a constituição define como traba
 com essas fontes. Novas specs fazem referência às regras existentes em vez de
 reescrevê-las.
 
-Cada decisão adotada gera um novo ADR e uma nova versão da constituição,
-incluindo decisões de produto, arquitetura e processo. O índice de ADRs liga
-cada decisão à sua versão; as cópias históricas permanecem preservadas. Mudanças
-de decisão exigem novos ADRs, com referência ao registro substituído.
+ADRs registram decisões estruturais ou relevantes de produto, arquitetura e
+processo, com uma versão por decisão dessa natureza. Detalhes locais de Feature
+ficam nas specs e planos. Registros anteriores permanecem preservados.
+Features encerradas podem ser compactadas em histórico por Épico conforme o
+artigo 2; regras vigentes e evidências mínimas continuam acessíveis.
 
 ## Uso nas ferramentas
 
@@ -90,6 +91,11 @@ matriz de integração para os limites de cada verificação.
 | Especialista Frontend | Implementar e testar interface e integração com a API. | [Contrato](agents/frontend.md); skill `jarvis-frontend`; perfil `jarvis_frontend`. |
 | Revisor | Revisar specs, planos e código contra critérios e evidências sem editar o alvo. | [Contrato comum adotado](agents/reviewer.md); skill `jarvis-review`; perfil `jarvis_reviewer`. |
 
+Skills de apoio, sem novos agentes: [jarvis-cleanup](skills/jarvis-cleanup/SKILL.md)
+compacta Features encerradas; [jarvis-run](skills/jarvis-run/SKILL.md) inicia o
+ambiente local; [jarvis-stop](skills/jarvis-stop/SKILL.md) encerra somente recursos
+que essa execução iniciou. Ver o guia de integração para exemplos e limites.
+
 O agente principal organiza a tarefa e mantém a continuidade. Perfis são usados
 quando houver delegação autorizada; não são iniciados automaticamente.
 O processo também funciona em uma única sessão.
@@ -122,7 +128,7 @@ Perfis TOML ficam em `.jarvis/integrations/codex/agents/`, com links em
 
 - Exercitar perfis em delegações autorizadas e avaliar seleção automática das skills.
 - Configurar e testar OpenCode e Claude Code quando disponíveis.
-- Aplicar o processo à primeira Feature de produto e avaliar o detalhamento das specs.
+- Avaliar as próximas Features a partir do piloto FEAT-006 já integrado.
 - Detalhar convenções de implementação conforme a organização dos projetos.
 
 ## Referências de integração

@@ -539,3 +539,6 @@ obj/
 *.swp
 # Local catalog credentials
 .env
+
+# Managed local processes, private logs and transient ownership records
+.jarvis/runtime/

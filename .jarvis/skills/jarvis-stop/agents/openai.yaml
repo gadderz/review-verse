@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jarvis Stop"
+  short_description: "Encerra somente os recursos iniciados pelo Jarvis"

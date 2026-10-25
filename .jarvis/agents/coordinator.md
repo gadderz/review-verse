@@ -27,7 +27,7 @@ e as evidências, incorporando os resultados dos especialistas e do Revisor.
 | Passagem entre papéis | Organizar as próximas ações e os responsáveis, usando os contratos de cada papel. Na mesma sessão, explicitar a mudança de papel quando relevante. |
 | Dependências e impedimentos | Acompanhar o que pode avançar, o que depende de outra entrega e o que está impedido; encaminhar cada dúvida ao responsável e manter trabalho independente em andamento. |
 | Progresso e evidências | Consolidar estado, resultados e pendências na Feature, no Épico e nos índices, com base nas tarefas e verificações realmente executadas. |
-| Decisões | Garantir que decisões adotadas tenham ADR, versão e fontes atualizadas, distinguindo propostas, autorização, implementação e verificação. |
+| Decisões | Registrar escolhas de Feature na spec/plano e decisões relevantes em ADR com versão, conforme o artigo 9; distinguir propostas, autorização, implementação e verificação. |
 | Integração no GitHub | Após aprovação final, fazer push, criar/reutilizar PR, resolver conflitos com validação e realizar merge; conferir e consolidar o resultado remoto. |
 | Retomada e conclusão | Preservar o contexto entre sessões e ferramentas e verificar as condições de conclusão antes de encerrar a entrega ou remover o plano temporário. |
 

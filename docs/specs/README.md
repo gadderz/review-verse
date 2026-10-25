@@ -23,6 +23,7 @@ no artigo 2 da [constituição](../../.jarvis/constitution.md).
 | [FEAT-005 — Revisão integrada](features/FEAT-005-revisao-integrada-do-jarvis.md) | EP-001 | Concluído | Três desalinhamentos corrigidos; integridade, formatos, descoberta e cópia isolada conferidos. Base inicial pronta para commit e piloto no Codex, com limites registrados. |
 | [FEAT-006 — Consulta de jogos por nome pela API](features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) | EP-002 | Concluído | Consulta verificada e aprovada; integrada na main pelo PR #1, merge 13851ab. |
 | [FEAT-007 — Integração no GitHub após aprovação final](features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | EP-001 | Concluído | Padrão verificado e aprovado; integrado na main pelo PR #2, merge 2aa0d32. Evidências consolidadas e plano encerrado. |
+| [FEAT-008 — Manutenção e execução local](features/FEAT-008-manutencao-e-execucao-local-do-jarvis.md) | EP-001 | Concluído | Plano commitado, política proporcional e três skills verificadas; aprovada e publicada, PR #4 aguardando integração. |
 
 O Catálogo de Jogos inicia a especificação de produto em EP-002 e FEAT-006.
 As demais Features e Épicos serão especificados conforme o trabalho for iniciado.
@@ -61,7 +62,7 @@ Registrar a causa, o que falta resolver e a próxima ação quando houver bloque
 O estado não comprova autorização nem substitui evidência. Uma Feature exige
 seus critérios atendidos; um Épico exige suas condições e Features concluídas ou
 retiradas do escopo por decisão registrada. Preservar vínculos das Features
-retiradas e o ADR correspondente. Não inferir conclusão pelo encerramento da branch.
+retiradas e ADR quando exigido pelo impacto. Não inferir conclusão pelo encerramento da branch.
 
 A conclusão técnica não equivale à aprovação final do autor nem à integração
 no GitHub. A etapa 7 do fluxo exige aprovação explícita, push e merge, com
@@ -69,6 +70,14 @@ resolução de conflitos e resultado remoto registrados na Feature, conforme o
 [ADR-0030](../adr/0030-integracao-no-github-apos-aprovacao-final.md).
 
 ## Ciclo do documento de trabalho
+
+Features concluídas, aprovadas, integradas e sem pendências podem ser
+compactadas em `docs/specs/history/EP-NNN.md`, com âncora `feat-nnn`. O índice
+e o Épico passam a apontar para a entrada consolidada. Preservar ID, comportamento,
+critérios, fontes atuais dos contratos, evidências/limites, aprovação, PR e SHA
+de origem. O Git permite recuperar o detalhamento original. Não compactar só
+pela idade nem apagar ADRs/snapshots. Ver
+[jarvis-cleanup](../../.jarvis/skills/jarvis-cleanup/SKILL.md) e ADR-0032.
 
 O documento pertence à execução de uma Feature em uma branch, é versionável
 enquanto ativo e pode conter todas as tarefas menores. A cada tarefa, registrar

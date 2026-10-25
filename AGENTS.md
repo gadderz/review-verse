@@ -27,18 +27,22 @@ Ao especificar Épicos e Features, ler o
 Ao revisar specs, planos ou implementação, ler o
 [contrato do Revisor](.jarvis/agents/reviewer.md), adotado no ADR-0018.
 Backend e Frontend detalham e ajustam suas tarefas dentro dos contratos; o
-Coordenador acompanha execução e consolida resultados. As cinco skills e os
+Coordenador acompanha execução e consolida resultados. As oito skills e os
 cinco perfis locais do Codex estão descritos no guia de integração; descoberta
 e formato não comprovam execução independente dos perfis.
 
-Consulte os [ADRs](docs/adr/README.md) pertinentes antes de decidir. Cada decisão
-adotada deve gerar um novo ADR e uma nova versão da constituição, conforme o
-artigo 9; preserve os registros e as versões anteriores.
+Consulte os [ADRs](docs/adr/README.md) pertinentes antes de decidir. Decisões
+estruturais ou relevantes geram ADR e versão conforme o artigo 9; detalhes de
+Feature ficam em specs/planos. Preserve os registros e as versões anteriores.
 
 Toda mudança deve ter spec na hierarquia Épico → Feature → tarefas do documento
 de trabalho da branch, conforme o artigo 2. Consulte `docs/specs/README.md` para
 os vínculos e estados. Consolide resultados e evidências na Feature e decisões
 nos ADRs antes de remover o documento temporário.
+
+Fazer commit do plano ao concluir o planejamento autorizado, antes da
+implementação dependente. Atualizá-lo nos marcos de execução; antes de removê-lo,
+conferir seu histórico Git e consolidar o SHA do plano na Feature.
 
 ## Contexto essencial
 

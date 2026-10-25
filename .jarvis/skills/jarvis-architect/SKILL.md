@@ -19,8 +19,8 @@ automaticamente; uma sessão pode assumir os papéis necessários.
 Estruture ou atualize o documento de trabalho da execução com tarefas ligadas
 aos critérios, resultados esperados, dependências, responsáveis e verificações.
 Inclua testes e responsável por cenários de integração conforme a constituição.
-Separe hipóteses de decisões e evidências; registre decisões adotadas no
-procedimento de ADRs e preserve dúvidas materiais para discussão.
+Separe hipóteses de decisões e evidências; registre decisões relevantes pelo
+procedimento de ADRs e escolhas locais no plano. Preserve dúvidas materiais para discussão.
 
 ## Entregar
 

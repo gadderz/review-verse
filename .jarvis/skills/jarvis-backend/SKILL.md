@@ -20,8 +20,8 @@ dependente, sem ampliar o escopo ou iniciar outros agentes automaticamente.
 Implemente o recorte autorizado respeitando domínio, autorização da API e
 limites de dados. Inclua persistência, migrações, Worker e integrações conforme
 a mudança. Resolva escolhas locais dentro dos contratos; alinhe mudanças de
-contrato ou premissas com os envolvidos e registre decisões adotadas conforme
-a constituição.
+contrato ou premissas com os envolvidos e registre decisões conforme o impacto previsto
+no artigo 9 da constituição.
 
 ## Verificar e entregar
 

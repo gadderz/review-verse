@@ -1,11 +1,11 @@
 # ADR-0003 — ADRs e uma nova versão por decisão
 
-Estado: Aceito
+Estado: Substituído
 Versão da constituição: 0.4
 Origem da autorização: instrução explícita do autor para usar ADRs e adicionar
 uma nova versão a cada decisão tomada.
 Substitui: nenhum.
-Substituído por: nenhum.
+Substituído por: [ADR-0031](0031-adrs-proporcionais-ao-impacto.md).
 
 ## Contexto
 

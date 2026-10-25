@@ -45,7 +45,7 @@ Um pedido só de plano técnico deve seguir esse contrato, sem iniciar outros
 agentes automaticamente. Uma sessão pode assumir o papel correspondente.
 
 Mantenha o comportamento duradouro na Feature e a estratégia técnica no plano.
-Registre decisões adotadas conforme o
+Registre decisões relevantes conforme o
 [procedimento de ADRs](../../../docs/adr/README.md), sem atribuir aceitação a
 uma hipótese ou à simples criação de um arquivo.
 

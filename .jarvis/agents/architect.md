@@ -29,6 +29,10 @@ Manter o plano proporcional: ajustes pequenos podem reutilizar a arquitetura
 vigente e ter poucas tarefas. Deixar detalhes locais para os especialistas;
 não prescrever toda função ou linha de código antecipadamente.
 
+Fazer commit do plano ao concluir o planejamento autorizado, antes da
+implementação dependente. O Coordenador preserva esse histórico na consolidação;
+o plano precisa ser recuperável no Git mesmo depois de removido.
+
 ## Entregas e responsabilidade pelos documentos
 
 - Desenho e contratos suficientes para executar o recorte autorizado.
@@ -50,7 +54,7 @@ Especificador e ao autor quando mudarem escopo ou regras confirmadas.
 Backend e Frontend detalham e atualizam tarefas e evidências de suas áreas.
 Ajustes rotineiros dentro dos contratos não exigem novo parecer do Arquiteto.
 Mudanças de contrato ou premissas técnicas exigem alinhamento entre os envolvidos
-e atualização do plano; decisões duradouras seguem o procedimento de ADRs.
+e atualização do plano; decisões relevantes seguem o procedimento de ADRs.
 
 O Coordenador acompanha dependências e impedimentos e consolida estados e
 resultados na Feature, Épico e índices. O Revisor verifica specs, plano ou entrega
