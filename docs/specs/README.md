@@ -22,7 +22,7 @@ no artigo 2 da [constituição](../../.jarvis/constitution.md).
 | [FEAT-004 — Contratos dos agentes](features/FEAT-004-contratos-dos-agentes.md) | EP-001 | Concluído | Seis contratos adotados; cinco skills descobertas no Codex e cinco perfis conferidos estruturalmente. Evidências e limites consolidados. |
 | [FEAT-005 — Revisão integrada](features/FEAT-005-revisao-integrada-do-jarvis.md) | EP-001 | Concluído | Três desalinhamentos corrigidos; integridade, formatos, descoberta e cópia isolada conferidos. Base inicial pronta para commit e piloto no Codex, com limites registrados. |
 | [FEAT-006 — Consulta de jogos por nome pela API](features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) | EP-002 | Concluído | Consulta verificada e aprovada; integrada na main pelo PR #1, merge 13851ab. |
-| [FEAT-007 — Integração no GitHub após aprovação final](features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | EP-001 | Concluído | Padrão verificado e aprovado; dependência integrada e PR #2 criado, aguardando merge. |
+| [FEAT-007 — Integração no GitHub após aprovação final](features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | EP-001 | Concluído | Padrão verificado e aprovado; integrado na main pelo PR #2, merge 2aa0d32. Evidências consolidadas e plano encerrado. |
 
 O Catálogo de Jogos inicia a especificação de produto em EP-002 e FEAT-006.
 As demais Features e Épicos serão especificados conforme o trabalho for iniciado.

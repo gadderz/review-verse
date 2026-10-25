@@ -50,8 +50,8 @@ Não exige cliente específico e não inclui push/merge sem aprovação final.
 
 ## O que falta
 
-Nenhuma pendência no recorte documental. A dependência FEAT-006 já foi
-integrada; resta integrar o PR #2 desta Feature e consolidar o resultado real.
+Nenhuma pendência nesta entrega. FEAT-006 e FEAT-007 integradas na main,
+com aprovações, PRs, commits e verificações consolidados nas respectivas specs.
 
 ## Evidências
 
@@ -79,6 +79,19 @@ Preparação do PR #2 após atualizar a base: passaram 227 links locais em
 dos 57 ADRs/versões anteriores. Código, testes e configuração iguais à base
 aprovada. A árvore do merge da FEAT-006 é idêntica à do commit `5be4309`.
 
+Fechamento remoto confirmado: PR #1 em `13851ab` e PR #2 em `2aa0d32`.
+Ambos estavam `CLEAN`/`MERGEABLE`, sem conflitos, checks ou revisões obrigatórias
+configurados. Main sem proteção ou regras aplicáveis; nenhum bypass
+administrativo foi utilizado. Os merges verificaram os SHAs esperados e
+preservaram os commits originais. A árvore do merge do PR #2 foi comparada à
+da branch aprovada e permaneceu idêntica; código/testes do Catálogo não mudaram.
+Build e suítes locais não foram repetidos nesta etapa documental.
+
+Consolidação final: conferidos 72 documentos Markdown e 457 links locais,
+sem referências quebradas após remover o plano. Passaram `git diff --check`,
+preservação dos 59 ADRs/snapshots existentes, identidade da constituição 0.31
+com seu snapshot e comparação da árvore do merge com a branch integrada.
+
 ## Aprovação final e integração no GitHub
 
 - Aprovação da decisão: pedido do autor registrado no ADR-0030.
@@ -86,15 +99,19 @@ aprovada. A árvore do merge da FEAT-006 é idêntica à do commit `5be4309`.
   aprovada” após a revisão do commit `f1388a3`, em 25/10/2026, nesta sessão.
 - Origem: `feat/007-github-feature-close`; remoto `origin`; destino `main`,
   confirmado como branch padrão pelo GitHub.
-- Base remota atualizada por `git fetch origin`: `13851ab` em 25/10/2026,
-  após merge da FEAT-006. As diferenças restantes são documentais.
+- Base remota atualizada por `git fetch origin`: `2aa0d32` em 25/10/2026,
+  após merge da FEAT-007. A entrega técnica continua somente documental.
 - Push: executado em 25/10/2026 para `origin/feat/007-github-feature-close`;
   publicação inicial em `0c51abf`, com registros de retomada posteriores nesta
   mesma branch. A FEAT-006 também foi publicada em sua branch própria.
 - PR: [#2 — docs(jarvis): require GitHub integration after final approval](https://github.com/gadderz/review-verse/pull/2),
   criado pelo GitHub CLI autenticado; origem e destino conferidos acima.
-- Conflitos e merge desta Feature: ainda não executados nesta retomada;
-  conferir o estado e as exigências do PR antes de integrar.
+- Merge desta Feature confirmado no GitHub em 25/10/2026 às 21:32:06 UTC,
+  estado `MERGED`, commit `2aa0d32a386d0291d7cd5dee722e31cd6857cb5f`.
+  Head conferido: `f6ed24834e360fb3acef8d7dc4c2feec88894d51`.
+- Conflitos e exigências: nenhum conflito; PR `CLEAN`/`MERGEABLE`, sem checks
+  ou revisões obrigatórias configurados. Main sem proteção ou regras aplicáveis.
+  Merge normal, sem bypass administrativo, preservando os commits originais.
 - Dependência atendida: FEAT-006 integrada pelo
   [PR #1](https://github.com/gadderz/review-verse/pull/1), merge `13851ab`,
   preservando o commit `5be4309` e os ADRs 0019 a 0029 na base remota.
@@ -104,17 +121,19 @@ aprovada. A árvore do merge da FEAT-006 é idêntica à do commit `5be4309`.
 - Impedimento anterior superado: o conector retornava HTTP 403; o autor
   instalou e autenticou o GitHub CLI. Acesso de gadderz ao repositório e criação
   de ambos os PRs confirmados; nenhuma permissão remota foi alterada pelo agente.
-- Retomada: conferir o PR #2 atualizado, suas exigências e o commit exato;
-  integrar e consolidar o resultado remoto. As aprovações seguem válidas.
+- Pendências de integração da entrega: nenhuma. Consolidação do resultado em
+  atualização documental posterior, conforme a etapa 7 do fluxo, sem alterar
+  código ou decisão adotada.
 
 ## Próxima ação
 
-Regra documental concluída e aprovada; FEAT-006 integrada. Concluir a etapa 7
-pelo PR #2 e consolidar seu resultado remoto antes de encerrar o documento de
-trabalho.
+Nenhuma pendência desta Feature. Prosseguir com as próximas entregas do EP-001
+conforme autorização e disponibilidade das ferramentas.
 
-O documento de trabalho é preservado para eventual integração posterior.
+O documento de trabalho foi encerrado e removido após consolidar aprovações,
+tentativa anterior com HTTP 403, solução com gh, PRs, commits e verificações nas
+specs duradouras. Seu histórico permanece nos commits da branch, incluindo
+`f5daf69` e `f6ed248`. Não há execução restante dependente desse documento.
 Commit local da entrega: `f1388a3`,
 `docs(jarvis): require GitHub integration after final approval`.
-A publicação das branches e o merge da dependência estão registrados acima;
-o merge desta Feature ainda não foi realizado.
+A publicação das branches e os merges das duas entregas foram confirmados acima.
