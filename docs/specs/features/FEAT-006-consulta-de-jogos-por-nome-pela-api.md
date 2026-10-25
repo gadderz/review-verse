@@ -254,19 +254,23 @@ O padrão foi acrescentado depois da entrega local, pelo
 - Origem: `feat/006-game-search-api`; remoto `origin`; destino `main`.
 - Push: executado em 25/10/2026 para `origin/feat/006-game-search-api`,
   preservando `5be4309f67fb93d0024d6aaec945e0568b108dcc`.
-- PR: criação tentada pelo conector GitHub com base `main` e título
-  `feat(catalog): add game search by name`; recusada pela API com HTTP 403,
-  `Resource not accessible by integration`. Nenhum PR foi criado.
-- Merge e conflitos: não executados; a base remota conferida continua em
-  `279d51c`. O impedimento é acesso do conector à operação de PR.
+- PR: [#1 — feat(catalog): add game search by name](https://github.com/gadderz/review-verse/pull/1),
+  criado pelo GitHub CLI autenticado após configuração pelo autor. A tentativa
+  anterior pelo conector havia falhado com HTTP 403,
+  `Resource not accessible by integration`.
+- Merge confirmado no GitHub em 25/10/2026 às 21:29:16 UTC:
+  `13851ab714712cc4e33a08970095407c1f153c71`, com estado `MERGED`.
+  A referência `origin/main` foi atualizada por fetch; sua árvore é idêntica
+  à entrega aprovada `5be4309`. Não houve conflitos ou resolução de código.
+- Exigências remotas conferidas: main sem proteção ou regras aplicáveis;
+  PR com estado `CLEAN`/`MERGEABLE`, sem checks configurados nem revisões
+  obrigatórias. Não houve bypass administrativo. O merge verificou o SHA
+  esperado da branch, preservando o commit original.
 - Verificações desta integração: `git diff --check` passou; código, testes,
   Compose e manifesto de ferramentas permanecem idênticos ao commit aprovado.
   Build e suítes não foram repetidos, pois não houve alteração nessas áreas.
-- Retomada: corrigir o acesso da conexão GitHub à criação e integração de PRs,
-  ou disponibilizar cliente autenticado com as permissões necessárias. `gh`
-  e sua configuração local não estão presentes. Depois, conferir a base e
-  possíveis PRs, integrar esta Feature e em seguida a FEAT-007. As aprovações
-  já recebidas permanecem válidas; repetir verificações afetadas por mudanças.
+- Pendências de integração desta Feature: nenhuma. Prosseguir com a FEAT-007
+  em seu PR próprio, reutilizando a aprovação existente.
 
 ## Próxima ação
 

@@ -3,7 +3,7 @@
 Feature: [FEAT-007](../../../docs/specs/features/FEAT-007-integracao-no-github-apos-aprovacao-final.md)
 Épico: [EP-001](../../../docs/specs/epics/EP-001-jarvis.md)
 Branch: `feat/007-github-feature-close`
-Estado: Bloqueado
+Estado: Em andamento
 
 ## Objetivo e plano
 
@@ -46,7 +46,7 @@ O que falta: nenhuma pendência de verificação documental.
 
 ### T-03 — Integrar a entrega aprovada no GitHub
 
-Estado: Bloqueado
+Estado: Em andamento
 Atende: fechamento da entrega conforme ADR-0030 e etapa 7 do fluxo.
 Responsável: Coordenador na sessão principal.
 Dependências: aprovações finais da FEAT-007 e da FEAT-006 recebidas; acesso ao
@@ -58,11 +58,12 @@ Arquivos ou componentes: specs, índices, branch e PR no GitHub.
 Verificação prevista: base remota atualizada, diferenças conferidas, links locais,
 git diff --check, checks/revisões remotos e confirmação do resultado do merge.
 O que foi feito: aprovações das duas Features registradas; branch padrão main
-confirmada no GitHub; fetch origin e pushes executados. Nenhum PR encontrado
-para reutilizar; tentativa de criação recusada por HTTP 403.
-O que falta: resolver o HTTP 403 do conector na criação de PR; depois integrar
-primeiro a FEAT-006, depois a FEAT-007, conferir exigências remotas e registrar
-o resultado dos dois PRs.
+confirmada no GitHub; fetch origin e pushes executados. Após HTTP 403 do
+conector, o autor configurou o GitHub CLI; autenticação e acesso conferidos.
+FEAT-006 integrada pelo PR #1, merge 13851ab; árvore remota igual a 5be4309,
+sem conflitos, checks ou revisões obrigatórias. PR #2 da FEAT-007 criado.
+O que falta: conferir o PR #2 atualizado, integrar e consolidar o resultado
+remoto dos dois PRs nas fontes duradouras antes de remover este documento.
 
 ## Evidências
 
@@ -72,6 +73,7 @@ o resultado dos dois PRs.
 | T-02 | Conferência documental | Passou: links, estados, cenários, integridade, snapshot e git diff --check. |
 | T-03 | Registro da aprovação e dependência | Passou: 32 links locais em quatro arquivos, git diff --check e constituição idêntica ao snapshot 0.31; nenhuma alteração de código, ADR ou versão. |
 | T-03 | Publicação e registro do impedimento | Passou: push das duas branches confirmado por git ls-remote, 62 links locais em seis arquivos, git diff --check e snapshot 0.31; código/testes/configuração iguais a 5be4309. Falhou: criação do PR, HTTP 403 da API GitHub. Merge não executado. |
+| T-03 | Retomada com gh e preparação do PR #2 | Passou: PR #1 MERGED em 13851ab, árvore igual a 5be4309; PR #2 criado. Conferidos 227 links em 17 arquivos documentais, git diff --check, snapshot 0.31 e preservação dos 57 registros históricos; código/testes iguais à base aprovada. |
 
 ## Aprovação e integração no GitHub
 
@@ -88,28 +90,24 @@ o resultado dos dois PRs.
 - Criação do PR da FEAT-006 tentada com base main; GitHub respondeu HTTP 403,
   `Resource not accessible by integration`. Não houve PR nem merge. Não foi
   repetida a mesma operação para FEAT-007 antes de resolver o impedimento.
-- `gh` não está instalado e não há configuração local desse cliente. O push
-  usa SSH; o conector disponível não conseguiu executar a operação de PR.
-  Corrigir seu acesso de escrita ou disponibilizar cliente autenticado com
-  permissões adequadas. Nenhuma permissão foi alterada ou regra remota contornada.
+- O autor instalou e autenticou `gh`; a retomada confirmou acesso de gadderz ao
+  repositório. A falha inicial de rede/credencial dentro do sandbox desapareceu
+  ao executar o cliente com as permissões de ambiente aprovadas.
+- [PR #1](https://github.com/gadderz/review-verse/pull/1) da FEAT-006 integrado
+  em 25/10/2026 às 21:29:16 UTC, merge 13851ab714712cc4e33a08970095407c1f153c71.
+  Main atualizada por fetch, sem alterações em relação à árvore aprovada 5be4309.
+- [PR #2](https://github.com/gadderz/review-verse/pull/2) da FEAT-007 criado;
+  merge ainda pendente. Nenhuma permissão foi alterada ou regra remota contornada.
 
 ## Retomada dos PRs
 
-1. Corrigir o acesso à criação/integração de PRs. Reutilizar as duas aprovações
-   já recebidas; o impedimento é de acesso, não de autorização do autor.
-2. Atualizar origin/main e conferir se já existem PRs ou merges dessas branches.
-3. Criar/reutilizar o PR `feat/006-game-search-api` → `main`, título
-   `feat(catalog): add game search by name`, para o commit 5be4309. Descrever
-   consulta pública, PostgreSQL, paginação/plataformas e vínculo à FEAT-006;
-   informar as evidências registradas de nove unitários/37 integrados, build e
-   formatação, sem alegar nova execução local. Registrar o aviso NU1903
-   preexistente no Worker e limites de IGDB/produção. Conferir exigências e
-   integrar preservando o commit original quando permitido pelo repositório.
-4. Atualizar a base e integrar `feat/007-github-feature-close` → `main`, título
-   `docs(jarvis): require GitHub integration after final approval`. O resultado
-   é o padrão de integração após aprovação final, com ADR-0030/0.31, instruções,
-   templates e registros de fechamento; mudança documental. Comparar somente
-   as diferenças restantes após FEAT-006, revalidar links/diff e cumprir checks.
+1. Reutilizar as duas aprovações e o GitHub CLI já autenticado.
+2. Atualizar a base e conferir o estado dos PRs #1 e #2 antes de retomar.
+3. FEAT-006 já integrada, sem mudanças no código aprovado ou novas suítes locais.
+   Suas evidências anteriores de nove unitários/37 integrados, build, revisão,
+   aviso NU1903 preexistente e limites permanecem na spec duradoura.
+4. Conferir e integrar PR #2, `feat/007-github-feature-close` → `main`.
+   Comparar somente diferenças documentais, revalidar links/diff e cumprir checks.
 5. Confirmar ambos os resultados remotos e consolidar URLs dos PRs, commits,
    verificações e conflitos nas Features. Remover este documento somente após
    consolidar a retomada e as evidências duradouras.
@@ -117,9 +115,9 @@ o resultado dos dois PRs.
 ## Retomada e consolidação
 
 - Feito: decisão e fontes do processo redigidas, revisão documental concluída,
-  ambas as aprovações finais recebidas, base remota conferida e branches publicadas.
-- Falta: corrigir o acesso aos PRs e concluir a integração das duas entregas.
-- Próxima ação: seguir a retomada dos PRs acima após resolver o HTTP 403,
-  sem reconfirmar as aprovações existentes.
+  ambas as aprovações recebidas, branches publicadas, gh autenticado, PR #1
+  integrado e PR #2 criado. Evidências da FEAT-006 consolidadas em sua spec.
+- Falta: integrar PR #2 e consolidar seu resultado remoto.
+- Próxima ação: seguir a retomada dos PRs acima sem reconfirmar as aprovações.
 - Antes de remover: consolidar resultados e retomada na Feature sem declarar
   ações remotas não executadas ou perder contexto da integração pendente.

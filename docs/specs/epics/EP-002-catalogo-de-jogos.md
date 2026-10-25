@@ -72,7 +72,7 @@ fontes da POC; esta especificação não comprova custo, capacidade ou latência
 
 | Feature | Estado | Resultado e pendências |
 | --- | --- | --- |
-| [FEAT-006 — Consulta de jogos por nome pela API](../features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) | Concluído | Consulta pública com PostgreSQL verificada, aprovada e branch publicada; PR/merge impedidos por HTTP 403 do conector GitHub. |
+| [FEAT-006 — Consulta de jogos por nome pela API](../features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) | Concluído | Consulta pública com PostgreSQL verificada e aprovada; integrada na main pelo PR #1, merge 13851ab. |
 
 Ainda faltam recortes para carga/sincronização, administração, filtros, detalhes
 e interface localizada. Esses são requisitos do catálogo da POC já documentados,
@@ -101,8 +101,8 @@ Não foram atribuídos IDs a entregas sem especificação própria.
 
 ## Próxima ação
 
-Concluir a integração da FEAT-006 após resolver o acesso do conector GitHub aos
-PRs (HTTP 403), reutilizando a aprovação final já recebida e a branch publicada.
+FEAT-006 integrada na main pelo PR #1; aprovação, commit e resultado remoto
+consolidados na Feature. Não há pendência de integração dessa entrega.
 
 Especificar a próxima Feature do catálogo, tratando a importação IGDB em
 recorte próprio conforme a separação confirmada. Filtros, detalhes, administração,
