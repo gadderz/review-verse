@@ -31,6 +31,17 @@ Para navegar pela documentação atual, use a
 | [0.17](0.17.txt) | Contrato do Coordenador adotado, com atuação na sessão principal. |
 | [0.18](0.18.txt) | Contrato do Especificador adotado e alinhado à skill e ao perfil existentes. |
 | [0.19](0.19.txt) | Contrato do Revisor adotado; seis contratos revisados com o autor. |
+| [0.20](0.20.txt) | Massa controlada na primeira consulta do catálogo. |
+| [0.21](0.21.txt) | Comparação de nomes na consulta de jogos. |
+| [0.22](0.22.txt) | Consulta pública do catálogo de jogos. |
+| [0.23](0.23.txt) | Retorno mínimo da primeira consulta de jogos. |
+| [0.24](0.24.txt) | Paginação e ordenação da consulta de jogos. |
+| [0.25](0.25.txt) | PostgreSQL local em contêiner Docker. |
+| [0.26](0.26.txt) | Módulo inicial do Catálogo na API modular. |
+| [0.27](0.27.txt) | Persistência e migrações do Catálogo com EF Core. |
+| [0.28](0.28.txt) | Busca literal e agregação no PostgreSQL. |
+| [0.29](0.29.txt) | Contrato HTTP da consulta de jogos. |
+| [0.30](0.30.txt) | Verificação do Catálogo com PostgreSQL isolado. |
 
 Não há cópias arquivadas das versões 0.1 e 0.2. Seus marcos estão no histórico
 da constituição e nos ADRs retrospectivos; os textos completos não foram

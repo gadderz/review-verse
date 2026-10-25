@@ -1,6 +1,20 @@
-@ReviewVerse.Game.Catalog.API_HostAddress = http://localhost:5263
+@CatalogHost = http://localhost:5080
 
-GET {{ReviewVerse.Game.Catalog.API_HostAddress}}/weatherforecast/
+### Busca pública por trecho, sem distinguir caixa/acentos
+GET {{CatalogHost}}/api/games?name=acao
 Accept: application/json
 
-###
+### Paginação por jogo
+GET {{CatalogHost}}/api/games?name=e&page=2&pageSize=1
+
+### Percentual literal
+GET {{CatalogHost}}/api/games?name=%25
+
+### Sem correspondência: HTTP 200, lista vazia
+GET {{CatalogHost}}/api/games?name=sem-correspondencia
+
+### Termo ausente: HTTP 400 ProblemDetails
+GET {{CatalogHost}}/api/games
+
+### Paginação inválida: HTTP 400 ProblemDetails
+GET {{CatalogHost}}/api/games?name=acao&pageSize=101

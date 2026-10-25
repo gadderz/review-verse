@@ -1,6 +1,6 @@
 # ReviewVerse — arquitetura inicial da POC
 
-Status: base de arquitetura aprovada em 19/10/2026. API .NET modular, Worker separado e PostgreSQL foram confirmados pelo autor, mantendo Next.js e Keycloak. Detalhes de módulos, acesso a dados, autenticação, implantação e dimensionamento continuam em definição. Nenhuma alteração de arquitetura foi aplicada ao código.
+Status: base de arquitetura aprovada em 19/10/2026. API .NET modular, Worker separado e PostgreSQL foram confirmados pelo autor, mantendo Next.js e Keycloak. Detalhes de módulos, acesso a dados, autenticação, implantação e dimensionamento continuam em definição. A primeira consulta do Catálogo foi implementada na FEAT-006; a organização das demais áreas continua pendente.
 
 ## Objetivo
 
@@ -48,11 +48,37 @@ As setas representam dependências gerais. Sessão web, callbacks de autenticaç
 | Keycloak | Autenticação e integração com os provedores externos escolhidos. |
 | PostgreSQL | Persistência do produto e, em banco lógico separado, da identidade. |
 
-A busca por nome e os filtros de gênero e plataforma pertencem ao módulo de Catálogo e devem retornar jogos agregados, sem duplicar resultados pelo número de plataformas. Paginação, índices e comparação de nomes serão detalhados na implementação. O escopo confirmado não exige um mecanismo externo de busca na POC.
+A busca por nome e os filtros de gênero e plataforma pertencem ao módulo de Catálogo e devem retornar jogos agregados, sem duplicar resultados pelo número de plataformas. A primeira consulta por nome tem comportamento definido na [FEAT-006](../specs/features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) e nos ADRs 0020 a 0023: trecho literal sem distinção de caixa/acentos, acesso público, retorno mínimo e paginação ordenada. O mecanismo de comparação e o contrato HTTP foram definidos nos ADRs 0027/0028 e implementados na FEAT-006; índices adicionais dependem de necessidade medida. O escopo confirmado não exige um mecanismo externo de busca na POC.
 
 A administração do catálogo será feita somente por API na POC, com operações autorizadas para administradores. Isso inclui a alimentação e as correções administrativas previstas; o acionamento manual do Worker também deve exigir essa autorização. Não haverá tela web própria de administração do catálogo nessa entrega.
 
 PostgreSQL foi confirmado como banco do produto. A escolha considera os relacionamentos entre usuários, jogos, plataformas, coleções e avaliações. A instância já descrita no Compose atual atende ao Keycloak, não a uma implementação pronta da persistência do produto. Acesso a dados, schemas, migrações e implantação ainda serão detalhados.
+
+Para a FEAT-006, o autor confirmou massa controlada de desenvolvimento/testes;
+a integração real IGDB fica em outra Feature ([ADR-0019](../adr/0019-massa-controlada-na-primeira-consulta.md)).
+O banco local deve rodar em contêiner Docker, considerando o ambiente do autor
+com OrbStack ([ADR-0024](../adr/0024-postgresql-local-em-docker.md)). Versão/imagem,
+portas, volumes, credenciais, migrações e isolamento foram detalhados no plano
+e implementados neste recorte. A separação lógica entre produto e identidade permanece vigente.
+O planejamento da FEAT-006 detalhou essas escolhas nos ADRs 0025 a 0029:
+
+- [Módulo inicial](../adr/0025-modulo-inicial-do-catalogo.md): host atual do
+  Catálogo e biblioteca com limites de aplicação e dados, dentro da API modular.
+- [Persistência](../adr/0026-persistencia-do-catalogo-com-ef-core.md): EF Core e
+  Npgsql 10, schema `catalog`, migrações explícitas e seed local separado.
+- [Consulta](../adr/0027-busca-literal-com-unaccent.md): `unaccent`/`lower` e
+  trecho literal no PostgreSQL, paginação por jogo e plataformas carregadas em
+  lote, com leitura consistente na mesma transação.
+- [HTTP](../adr/0028-contrato-http-da-consulta-de-jogos.md): `GET /api/games`,
+  envelope paginado e ProblemDetails para validação/falhas.
+- [Verificação](../adr/0029-verificacao-do-catalogo-com-postgresql-isolado.md):
+  serviços Docker isolados para desenvolvimento/testes, PostgreSQL 16 e testes
+  HTTP com banco real. O plano não pressupõe execução do Keycloak para buscar.
+
+A FEAT-006 implementou esse recorte: API e biblioteca do Catálogo, migração,
+seed controlado e serviços PostgreSQL isolados, verificados no OrbStack.
+Contratos e comandos estão no [guia local](../desenvolvimento/catalogo-local.md),
+e resultados/revisão na Feature. A configuração local não define hospedagem.
 
 O Worker executaria os casos de uso de importação do módulo de Catálogo e escreveria somente os dados desse módulo. Foram confirmados acionamento manual por administrador e agendamento diário. Por delegação do autor, o padrão será 04h no fuso `America/Sao_Paulo`, ajustável por configuração, com cron de cinco campos `0 4 * * *`. O agendador precisa receber o fuso explicitamente. O uso de Hangfire ainda será discutido. O .NET oferece suporte a processos de trabalho em segundo plano com Worker Services. [Referência: Worker Services](https://learn.microsoft.com/en-us/dotnet/core/extensions/workers).
 
@@ -118,7 +144,7 @@ Se a mesma pessoa quiser usar Google e Steam na mesma conta, propõe-se associa�
 
 “Realm” no domínio do ReviewVerse significa Jogos, Animes/Mangás ou Filmes/Séries. Isso é distinto de um realm do Keycloak, que organiza identidade. A proposta inicial é usar um realm de identidade para a aplicação em cada ambiente, sem criar um realm do Keycloak para cada reino de mídia.
 
-Cada módulo é responsável por suas regras de negócio e seus dados. Operações entre módulos passam por contratos explícitos, e um módulo não escreve diretamente nas tabelas de outro, mesmo compartilhando implantação ou banco. Mudanças que atravessem módulos devem explicitar coordenação, consistência e tratamento de falhas no plano de execução. Esses princípios foram confirmados no [ADR-0007](../adr/0007-limites-de-modulos-e-evolucao-da-arquitetura.md), correspondente à constituição 0.8. Organização de tabelas, migrações e projetos continua em detalhamento. A base aprovada orientará uma futura revisão da estrutura de projetos existente; essa reorganização ainda não foi executada.
+Cada módulo é responsável por suas regras de negócio e seus dados. Operações entre módulos passam por contratos explícitos, e um módulo não escreve diretamente nas tabelas de outro, mesmo compartilhando implantação ou banco. Mudanças que atravessem módulos devem explicitar coordenação, consistência e tratamento de falhas no plano de execução. Esses princípios foram confirmados no [ADR-0007](../adr/0007-limites-de-modulos-e-evolucao-da-arquitetura.md), correspondente à constituição 0.8. Organização de tabelas, migrações e projetos continua em detalhamento. A FEAT-006 iniciou essa organização no Catálogo; a migração das demais áreas ainda não foi executada.
 
 ## Operação e crescimento
 

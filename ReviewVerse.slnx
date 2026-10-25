@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/" />
   <Folder Name="/src/ReviewVerse.Game.Catalog/">
+    <Project Path="src/ReviewVerse.Game.Catalog/ReviewVerse.Game.Catalog/ReviewVerse.Game.Catalog.csproj" />
     <Project Path="src/ReviewVerse.Game.Catalog/ReviewVerse.Game.Catalog.API/ReviewVerse.Game.Catalog.API.csproj" />
     <Project Path="src/ReviewVerse.Game.Catalog/ReviewVerse.Game.Catalog.Worker/ReviewVerse.Game.Catalog.Worker.csproj" />
   </Folder>
@@ -10,5 +11,9 @@
   </Folder>
   <Folder Name="/src/ReviewVerse.Shared/">
     <Project Path="src/ReviewVerse.Shared/ReviewVerse.Shared/ReviewVerse.Shared.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ReviewVerse.Game.Catalog.UnitTests/ReviewVerse.Game.Catalog.UnitTests.csproj" />
+    <Project Path="tests/ReviewVerse.Game.Catalog.IntegrationTests/ReviewVerse.Game.Catalog.IntegrationTests.csproj" />
   </Folder>
 </Solution>

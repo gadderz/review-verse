@@ -12,6 +12,7 @@ A descoberta inicial consolidou a proposta do produto, o escopo da POC, suas pri
 | [Hospedagem inicial](drafts/hospedagem-inicial.md) | Restrições de orçamento, referências de preços consultadas em 19/10/2026 e proposta de dimensionamento a validar. |
 | [ADRs](adr/README.md) | Decisões de produto, arquitetura e processo, com contexto, consequências e versão correspondente da constituição. |
 | [Specs de Épicos e Features](specs/README.md) | Hierarquia de trabalho, estados, resultados entregues e pendências de conclusão. |
+| [Catálogo local](desenvolvimento/catalogo-local.md) | Docker/OrbStack, migrações, massa controlada, contrato da consulta e testes. |
 
 Os arquivos permanecem em `drafts/` porque o detalhamento técnico continuará durante a implementação. As decisões indicadas como confirmadas formam a base atual do projeto.
 

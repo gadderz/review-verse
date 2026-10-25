@@ -131,6 +131,30 @@ Correções administrativas devem ser preservadas pelo Worker. A sincronização
 
 Ainda precisam ser definidos o indicador de popularidade usado e a prioridade definitiva das atualizações. A eventual possibilidade de enviar sugestões de correção, sem editar o catálogo diretamente, também não foi definida.
 
+## Primeira Feature do catálogo pela API
+
+O recorte inicial confirmado é a [FEAT-006](../specs/features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md).
+Usará massa controlada de desenvolvimento/testes persistida em PostgreSQL;
+a importação real IGDB entra em outra Feature do Catálogo ([ADR-0019](../adr/0019-massa-controlada-na-primeira-consulta.md)).
+Essa separação não altera as condições de carga e sincronização da POC.
+
+A consulta será pública e buscará trecho literal do título original,
+ignorando caixa e acentos, removendo espaços somente nas pontas. O termo deve
+ter de 1 a 200 caracteres; pontuação e curingas são literais, sem busca
+aproximada ([ADR-0020](../adr/0020-comparacao-de-nomes-na-consulta.md) e
+[ADR-0021](../adr/0021-consulta-publica-do-catalogo.md)).
+
+O retorno inicial contém identificador estável, título original e plataformas,
+agregados por jogo. Capa, títulos traduzidos, nomes alternativos e detalhes
+ficam para evolução dessa API; a apresentação localizada completa continua
+obrigatória para a POC ([ADR-0022](../adr/0022-retorno-minimo-da-consulta.md)).
+A resposta informa página, tamanho e total de jogos; usa página 1/tamanho 20
+por padrão, máximo 100, e ordenação por título sem distinção de caixa/acentos
+e identificador para desempate ([ADR-0023](../adr/0023-paginacao-da-consulta-de-jogos.md)).
+
+Essa primeira entrega está implementada e verificada na FEAT-006 com massa
+controlada. A consulta local não comprova importação IGDB ou conclusão da POC.
+
 ## Regras de Backlog e coleções
 
 No Realm de Jogos, os estados confirmados são:
@@ -279,13 +303,16 @@ O PDF contém exemplos do template de Internet Banking: a página 3 explica o te
 
 - A solução contém projetos de API e worker para catálogo de games, API e domínio de reviews, e uma biblioteca compartilhada.
 - Os projetos declaram `net10.0`.
-- As APIs ainda contêm os endpoints de exemplo `WeatherForecast`.
+- A API do Catálogo expõe consulta pública por nome com PostgreSQL; a API de
+  Reviews ainda contém o endpoint de exemplo `WeatherForecast`.
 - A entidade `Review` contém nota, identificação de mídia, identificação de usuário e texto. A atualização da nota valida valores entre 1 e 10, faixa agora confirmada para o produto. A entidade ainda não explicita a plataforma, os templates ou as subnotas. A separação entre obra no Backlog sem avaliação e Review com nota obrigatória ainda precisa ser modelada.
 - O worker referencia Hangfire e Refit. O job e a interface de IGDB estão vazios.
 - O Docker Compose descreve Keycloak com PostgreSQL. Isso não comprova que a autenticação das APIs esteja integrada: o README original marcava a integração como concluída, mas os arquivos `Program.cs` consultados não configuram autenticação.
 - Não foram encontrados projetos de interface web ou mobile na árvore inspecionada.
 
-Essas observações vêm da leitura dos arquivos. A execução e a compilação da solução não foram verificadas nesta etapa de documentação.
+A compilação da solução e os testes do Catálogo foram verificados na FEAT-006,
+com resultados e limites consolidados na respectiva spec. Os demais componentes
+continuam com o estado observado na leitura dos arquivos.
 
 ## Histórico da descoberta
 
