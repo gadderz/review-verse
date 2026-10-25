@@ -51,7 +51,7 @@ Contribuir com o Arquiteto e o Backend nos contratos de consumo, erros, sessão 
 dependências. Mudanças de contrato ou premissas técnicas exigem alinhamento
 entre os envolvidos e atualização do plano. Dúvidas sobre comportamento, escopo
 ou decisões confirmadas seguem a constituição e retornam ao autor quando necessário.
-Decisões duradouras seguem o procedimento de ADRs.
+Decisões relevantes seguem o procedimento de ADRs.
 
 Aplicar validações e apresentar permissões na interface de acordo com as regras
 do produto, preservando as verificações correspondentes na API. A apresentação

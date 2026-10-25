@@ -7,6 +7,8 @@ Substitui: <ADR anterior ou nenhum>.
 Substituído por: nenhum.
 
 Use este template em `docs/adr/NNNN-descricao.md` e remova estas instruções.
+Use somente para decisões que atendam ao critério de impacto do artigo 9;
+detalhes restritos à Feature pertencem à spec ou ao plano.
 Ao adotar a decisão, atribua sua própria versão da constituição, arquive a nova
 versão e atualize o índice, conforme `docs/adr/README.md`.
 

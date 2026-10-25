@@ -44,7 +44,7 @@ e índices coerentes sem exigir reconfirmação para ajustes rotineiros.
 Usar as fontes vigentes para resolver dúvidas já decididas. Se restar uma dúvida
 material que mude regra, escopo ou decisão confirmada, apresentá-la ao autor e
 prosseguir com o detalhamento independente dela. Não atribuir aceitação a uma
-hipótese, exemplo ou sugestão por ela constar na spec. Decisões adotadas seguem
+hipótese, exemplo ou sugestão por ela constar na spec. Decisões relevantes seguem
 o procedimento de ADRs e atualização das fontes, em coordenação com o Coordenador.
 
 ## Critérios, verificação e passagem

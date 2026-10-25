@@ -29,9 +29,10 @@ dispensar objetivo, resultado esperado e verificação.
 
 Separar dúvidas de comportamento de escolhas técnicas. Perguntar ao autor
 quando a resposta mudar uma regra, o escopo ou uma decisão confirmada. Resolver
-escolhas rotineiras dentro da autorização existente. Cada decisão adotada exige
-ADR e versão próprios, conforme o [procedimento de ADRs](../docs/adr/README.md),
-antes de orientar a execução. Hipóteses ainda abertas não viram requisitos.
+escolhas rotineiras dentro da autorização existente. Decisões estruturais ou
+relevantes exigem ADR e versão, conforme o [procedimento de ADRs](../docs/adr/README.md).
+Detalhes de Feature ficam na spec/plano antes da execução afetada; hipóteses
+ainda abertas não viram requisitos.
 
 Uma Feature pode ser Planejada quando escopo e critérios estiverem definidos e
 as dúvidas restantes não impedirem sua execução. Esse estado não substitui a
@@ -87,7 +88,7 @@ também sua linha no Épico e no índice de specs. O progresso das tarefas vive 
 documento de trabalho; o resultado da Feature permanece na spec duradoura.
 
 Se evidências exigirem ajustar a abordagem dentro do escopo, atualizar o plano.
-Mudanças de decisões duradouras seguem o fluxo de ADRs. Não ampliar a entrega
+Mudanças de decisões relevantes seguem o fluxo de ADRs. Não ampliar a entrega
 silenciosamente. Diante de impedimento, registrar sua causa, o que falta resolver
 e a próxima ação, mantendo o trabalho independente em andamento quando possível.
 
@@ -113,10 +114,11 @@ Antes de encerrar ou remover o documento de trabalho:
 
 1. Transferir para a Feature os resultados, as evidências, os critérios atendidos
    e o que ainda falta. Manter referências que continuem acessíveis após a remoção.
-2. Registrar decisões duradouras em ADRs, com suas versões arquivadas, e atualizar
+2. Registrar decisões relevantes em ADRs, com suas versões arquivadas, e atualizar
    as fontes de produto, arquitetura ou processo afetadas.
 3. Atualizar o Épico e o índice de specs. Concluir a Feature apenas com critérios
-   atendidos; retirar critérios ou Features do escopo exige decisão registrada.
+   atendidos; retirar critérios ou Features do escopo exige decisão do autor
+   registrada na spec e ADR quando o impacto atender ao artigo 9.
 4. Conferir se outra sessão consegue retomar pendências sem o documento temporário.
    Se houver trabalho pendente, preservá-lo ou transferir seu contexto para o
    documento de trabalho da branch que continuará a execução.

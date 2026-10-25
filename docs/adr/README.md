@@ -1,8 +1,22 @@
 # Registros de decisão — ADRs
 
-O ReviewVerse usa ADRs para registrar decisões de produto, arquitetura e processo,
-conforme o artigo 9 da [constituição](../../.jarvis/constitution.md). Cada decisão
-adotada tem seu próprio ADR e uma nova versão da constituição.
+O ReviewVerse usa ADRs para decisões estruturais ou relevantes de produto,
+arquitetura e processo, conforme o artigo 9 da
+[constituição](../../.jarvis/constitution.md) e o ADR-0031. Cada decisão dessa
+natureza tem ADR e versão próprios. Detalhes locais ficam nas specs/planos.
+
+## Quando criar
+
+Criar para arquitetura, limites de módulos, tecnologia central, contratos
+compartilhados/incompatíveis, segurança, integridade, custo operacional relevante,
+princípios do processo ou alternativas duradouras com reversão onerosa.
+Por exemplo, trocar o modelo de persistência ou a política de autorização exige
+ADR. Rota interna de uma Feature, tamanho de página, porta local, divisão de
+tarefas e resultado de teste ficam na spec/plano/guia. A decisão concreta pode
+exigir ADR se tiver impacto maior; não decidir somente pelo nome do assunto.
+
+O histórico 0001–0030 foi criado sob a regra anterior e não será reescrito ou
+apagado por essa mudança. O novo critério vale para decisões futuras.
 
 ## Índice
 
@@ -10,7 +24,7 @@ adotada tem seu próprio ADR e uma nova versão da constituição.
 | --- | --- | --- | --- |
 | [ADR-0001](0001-testes-automatizados-por-comportamento.md) | Testes automatizados por comportamento | Aceito | 0.2 |
 | [ADR-0002](0002-commits-em-ingles-e-conventional-commits.md) | Commits em inglês e Conventional Commits | Aceito | 0.3 |
-| [ADR-0003](0003-adrs-e-versionamento-por-decisao.md) | ADRs e uma nova versão por decisão | Aceito | 0.4 |
+| [ADR-0003](0003-adrs-e-versionamento-por-decisao.md) | ADRs e uma nova versão por decisão | Substituído pelo ADR-0031 | 0.4 |
 | [ADR-0004](0004-especificacoes-hierarquicas-e-documento-de-trabalho.md) | Specs hierárquicas e documento de trabalho | Aceito | 0.5 |
 | [ADR-0005](0005-produto-escopo-e-simplicidade.md) | Produto, escopo e simplicidade | Aceito | 0.6 |
 | [ADR-0006](0006-fontes-decisoes-e-tratamento-de-conflitos.md) | Fontes, decisões e tratamento de conflitos | Aceito | 0.7 |
@@ -38,6 +52,8 @@ adotada tem seu próprio ADR e uma nova versão da constituição.
 | [ADR-0028](0028-contrato-http-da-consulta-de-jogos.md) | Contrato HTTP da consulta de jogos | Aceito | 0.29 |
 | [ADR-0029](0029-verificacao-do-catalogo-com-postgresql-isolado.md) | Verificação do Catálogo com PostgreSQL isolado | Aceito | 0.30 |
 | [ADR-0030](0030-integracao-no-github-apos-aprovacao-final.md) | Integração no GitHub após aprovação final | Aceito | 0.31 |
+| [ADR-0031](0031-adrs-proporcionais-ao-impacto.md) | ADRs proporcionais ao impacto | Aceito | 0.32 |
+| [ADR-0032](0032-compactacao-de-features-encerradas.md) | Compactação de Features encerradas | Aceito | 0.33 |
 
 Os dois primeiros ADRs registram retrospectivamente decisões já confirmadas
 pelo autor nesta conversa. Mantêm as versões que essas decisões já receberam;
@@ -56,7 +72,9 @@ o conjunto das decisões atuais sem reescrever o registro histórico aceito.
 
 ## Criar e adotar uma decisão
 
-1. Consultar este índice, os ADRs pertinentes e a documentação atual.
+1. Avaliar o impacto pelos critérios acima. Registrar escolhas locais na
+   spec/plano, sem criar ADR ou snapshot. Para decisões relevantes, consultar
+   este índice, os ADRs pertinentes e a documentação atual.
 2. Criar `NNNN-descricao.md` com o próximo número livre, usando o
    [template de ADR](../../.jarvis/templates/adr.md). Nunca reutilizar números.
 3. Registrar contexto, decisão, consequências, alternativas efetivamente

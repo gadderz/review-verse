@@ -8,7 +8,7 @@ aguardam disponibilidade, conforme o
 
 | Recurso | Preparação e resultado |
 | --- | --- |
-| Codex — cinco skills | `jarvis-spec`, `jarvis-architect`, `jarvis-backend`, `jarvis-frontend` e `jarvis-review` passaram no validador oficial. O CLI 0.163.0 retornou as cinco habilitadas, com escopo `repo`, em `skills/list` com recarga forçada. |
+| Codex — oito skills | As cinco skills de desenvolvimento e `jarvis-cleanup`, `jarvis-run`, `jarvis-stop` passaram no validador oficial. Consulta `skills/list` com recarga forçada retornou as oito habilitadas com escopo `repo`, sem iniciar turnos de modelo. |
 | Codex — cinco perfis | `jarvis_spec`, `jarvis_architect`, `jarvis_backend`, `jarvis_frontend` e `jarvis_reviewer` configurados; TOML, fontes e vínculos conferidos. Execução como subagentes não realizada. |
 | Coordenador | Atua na sessão principal conforme o [contrato comum](../agents/coordinator.md); sem exigir skill ou perfil separado. |
 | OpenCode | Configuração pendente; teste não executado. |
@@ -36,12 +36,30 @@ e comportamento dos agentes ainda não foram avaliados independentemente.
 | Especialista Frontend | [frontend.md](../agents/frontend.md) | [jarvis-frontend](../skills/jarvis-frontend/SKILL.md) | [jarvis_frontend](codex/agents/jarvis_frontend.toml) |
 | Revisor | [reviewer.md](../agents/reviewer.md) | [jarvis-review](../skills/jarvis-review/SKILL.md) | [jarvis_reviewer](codex/agents/jarvis_reviewer.toml) |
 
-Os contratos e procedimentos ficam em `.jarvis/`. As cinco skills têm links de
+Os contratos e procedimentos ficam em `.jarvis/`. As oito skills têm links de
 descoberta em `.agents/skills/`; os cinco perfis TOML têm links em `.codex/agents/`.
 Os arquivos apontados pertencem ao próprio repositório. Não houve instalação global.
 Os adaptadores de outros clientes deverão reutilizar as fontes comuns.
 
 ## Usar no Codex
+
+Além das cinco skills de desenvolvimento, estão disponíveis três skills de apoio,
+sem novos perfis de agente: [jarvis-cleanup](../skills/jarvis-cleanup/SKILL.md),
+[jarvis-run](../skills/jarvis-run/SKILL.md) e [jarvis-stop](../skills/jarvis-stop/SKILL.md).
+As fontes comuns e links de descoberta seguem a mesma organização local.
+
+```text
+$jarvis-cleanup Simule a compactação das Features encerradas do EP-001.
+$jarvis-cleanup Compacte a documentação elegível da FEAT-006.
+$jarvis-run Execute o Catálogo local para eu testar manualmente.
+$jarvis-stop Pare o ambiente iniciado pelo Jarvis.
+```
+
+A limpeza consolida histórico por Épico e preserva contratos/evidências; não
+apaga ADRs/snapshots. A execução usa o auxiliar descrito no
+[guia local](../../docs/desenvolvimento/catalogo-local.md), com propriedade dos
+processos/contêineres. Esses pedidos operacionais não exigem novas Features;
+mudanças necessárias no produto ou no auxiliar seguem seu escopo de desenvolvimento.
 
 Na raiz do repositório, indique a Feature e o recorte. Exemplos de pedidos:
 

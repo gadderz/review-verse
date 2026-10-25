@@ -1,6 +1,6 @@
 # Constituição do Jarvis — ReviewVerse
 
-Versão: 0.31, revisão inicial concluída com o autor.
+Versão: 0.33, revisão inicial concluída com o autor.
 Os princípios dos artigos 1 a 9 estão confirmados pelas decisões registradas
 neste documento. A evolução da constituição continua pelo procedimento de ADRs.
 
@@ -39,7 +39,7 @@ ação. É temporário no ciclo de execução, mas versionado enquanto ativo par
 permitir continuidade entre sessões e ferramentas.
 
 Antes de removê-lo, consolidar resultados, pendências e evidências na Feature,
-atualizar o progresso do Épico e preservar decisões duradouras em ADRs. Não
+atualizar o progresso do Épico e preservar decisões relevantes em ADRs. Não
 remover um plano com execução pendente sem transferir o contexto para a retomada.
 Correções posteriores podem reusar a Feature e abrir outro documento de trabalho.
 
@@ -52,6 +52,14 @@ Separar comportamento esperado de solução técnica. Dúvidas materiais devem s
 explicitadas; uma hipótese não vira requisito por ter sido escrita pelo agente.
 O [índice de specs](../docs/specs/README.md) descreve os arquivos e o acompanhamento.
 
+Uma Feature concluída, aprovada e integrada, sem pendências abertas, pode ter
+sua spec compactada em histórico por Épico, preservando ID, vínculo, comportamento
+e critérios entregues, decisões relevantes, evidências, aprovação e PR/commit.
+Regras vigentes e contratos continuam acessíveis na documentação mantida;
+referências devem ser atualizadas antes de remover arquivos redundantes.
+Idade do arquivo não autoriza apagar contexto. ADRs e snapshots não são alvo
+dessa limpeza. O detalhamento do Git permanece recuperável pelo commit de origem.
+
 ## 3. Decisões, propostas e evidências têm estados distintos
 
 Identificar explicitamente propostas, decisões adotadas, implementação observada
@@ -61,8 +69,8 @@ consolidam as regras do produto e o desenho técnico; specs de Épicos e Feature
 definem escopo, critérios e progresso; o documento de trabalho detalha a execução.
 O código e as verificações demonstram o que está implementado e validado.
 
-Decisões tomadas na conversa devem ser registradas em ADR e nas fontes afetadas
-antes de orientar a execução, conforme a autorização existente. Uma spec não
+Decisões tomadas na conversa devem ser registradas na fonte correspondente ao
+seu impacto, conforme o artigo 9, antes de orientar a execução. Uma spec não
 altera silenciosamente uma decisão vigente. Preservar os registros históricos
 e os vínculos de substituição para distinguir decisões atuais das superadas.
 
@@ -146,7 +154,7 @@ O agente deve executar o trabalho autorizado com autonomia para escolhas
 rotineiras de implementação, respeitando o escopo e as permissões do ambiente.
 A autorização existente continua válida durante a tarefa, sem reconfirmação a
 cada etapa. Alterações de escopo ou de decisões confirmadas devem ser discutidas
-com o autor; decisões duradouras seguem o procedimento de ADRs. Pedidos apenas
+com o autor; decisões relevantes seguem o procedimento de ADRs. Pedidos apenas
 de especificação ou revisão devem permanecer nesse limite.
 
 Ao retomar ou trocar de sessão ou ferramenta, consultar as specs do Épico e da
@@ -173,25 +181,31 @@ Exemplos:
 - `fix(reviews): prevent duplicate reviews per platform`
 - `docs(jarvis): define commit message conventions`
 
-## 9. Cada decisão deve ter ADR e uma nova versão
+## 9. ADRs para decisões relevantes
 
-Registrar cada decisão adotada em um novo ADR numerado em `docs/adr/`, com
-contexto, decisão, consequências, origem da autorização e versão correspondente
-da constituição. A regra abrange decisões de produto, arquitetura e processo.
-Uma proposta ou hipótese ainda não adotada deve continuar identificada como tal.
+Registrar em ADR decisões estruturais ou relevantes: mudança de arquitetura,
+limites entre módulos, tecnologia central, contrato compartilhado/incompatível,
+segurança, integridade dos dados, custo operacional significativo ou princípio
+do processo. Usar também quando houver alternativas com consequências duradouras
+e custo relevante de reversão, ou substituição de uma decisão dessa natureza.
 
-Cada decisão adotada gera sua própria versão da constituição, seguindo a
-sequência atual: `0.31`, `0.32`, `0.33` e assim por diante. Não agrupar decisões
-independentes em uma única versão. Registrar a versão mesmo quando a decisão
-altera somente uma fonte de produto ou arquitetura; nesse caso, atualizar o
-histórico da constituição e manter seus princípios.
+Regras e escolhas restritas a uma Feature, detalhes de implementação, parâmetros
+locais, tarefas, resultados de testes e ajustes editoriais ficam na spec, no
+plano ou na documentação técnica adequada. Não geram ADR nem versão da
+constituição por si só. O impacto, e não o tamanho da mudança, determina o
+registro. Uma proposta ou hipótese continua identificada como tal.
+
+Cada decisão que exige ADR recebe seu próprio registro e uma versão da
+constituição, seguindo `0.33`, `0.34`, `0.35` e assim por diante. Não agrupar
+decisões independentes. Essa versão registra a decisão relevante mesmo quando
+altera somente uma fonte de produto ou arquitetura, mantendo os princípios.
 
 Preservar uma cópia textual de cada nova versão em
 `.jarvis/versions/<versao>.txt` e manter este arquivo como a versão atual.
 Atualizar também o índice de ADRs e as fontes afetadas pela decisão. Ajustes
 apenas editoriais não constituem uma nova decisão e não geram versão.
 
-Uma mudança de decisão exige outro ADR, com referência ao registro substituído.
+Uma mudança de decisão registrada em ADR exige outro ADR, com referência ao registro substituído.
 Preservar o conteúdo original dos ADRs aceitos e das versões arquivadas; nos
 ADRs antigos, atualizar apenas o estado e os vínculos de substituição quando
 necessário. O [índice de ADRs](../docs/adr/README.md) define o procedimento.
@@ -239,6 +253,8 @@ exigir nova confirmação quando a autorização existente já for suficiente.
 | 0.29 | [ADR-0028 — Contrato HTTP da consulta de jogos](../docs/adr/0028-contrato-http-da-consulta-de-jogos.md). |
 | 0.30 | [ADR-0029 — Verificação do Catálogo com PostgreSQL isolado](../docs/adr/0029-verificacao-do-catalogo-com-postgresql-isolado.md). |
 | 0.31 | [ADR-0030 — Integração no GitHub após aprovação final](../docs/adr/0030-integracao-no-github-apos-aprovacao-final.md). |
+| 0.32 | [ADR-0031 — ADRs proporcionais ao impacto](../docs/adr/0031-adrs-proporcionais-ao-impacto.md). |
+| 0.33 | [ADR-0032 — Compactação de Features encerradas](../docs/adr/0032-compactacao-de-features-encerradas.md). |
 
 O [arquivo de versões](versions/README.md) preserva as cópias disponíveis.
 O histórico de decisões anteriores do produto permanece em

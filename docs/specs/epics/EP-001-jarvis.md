@@ -32,11 +32,16 @@ definido na documentação de visão e arquitetura.
 | [FEAT-004 — Contratos dos agentes](../features/FEAT-004-contratos-dos-agentes.md) | Concluído | Seis contratos adotados; cinco skills descobertas no Codex e cinco perfis conferidos estruturalmente. Evidências e limites consolidados. |
 | [FEAT-005 — Revisão integrada](../features/FEAT-005-revisao-integrada-do-jarvis.md) | Concluído | Três desalinhamentos corrigidos; integridade, formatos, descoberta e cópia isolada conferidos. Base inicial pronta para commit e piloto no Codex, com limites registrados. |
 | [FEAT-007 — Integração no GitHub após aprovação final](../features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | Concluído | Padrão verificado e aprovado; integrado na main pelo PR #2, merge 2aa0d32. Evidências consolidadas e plano encerrado. |
+| [FEAT-008 — Manutenção e execução local](../features/FEAT-008-manutencao-e-execucao-local-do-jarvis.md) | Concluído | Plano commitado, ADRs proporcionais e três skills verificadas; aprovação final e integração pendentes. |
 
 O inventário de Features deste Épico ainda está em detalhamento. As condições
 restantes não são entregas concluídas nem Features implicitamente aprovadas.
 
 ## O que já foi feito
+
+FEAT-008 concluída tecnicamente, com plano inicial em `c1403d0`, critérios e
+evidências consolidados na Feature.
+Aprovação final e integração pendentes; não comprovadas pelo estado Concluído.
 
 - Criada a base de constituição, fluxo e entradas compartilhadas.
 - Registradas as decisões de testes, commits e ADRs nas versões 0.2 a 0.4.

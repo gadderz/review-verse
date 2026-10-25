@@ -1,7 +1,7 @@
 # FEAT-008 — Manutenção e execução local do Jarvis
 
 Épico: [EP-001 — Jarvis](../epics/EP-001-jarvis.md)
-Estado: Em andamento
+Estado: Concluído
 
 ## Necessidade e escopo
 
@@ -23,8 +23,11 @@ do commit do plano foi autorizada diretamente, dispensando rito próprio.
 
 ## Progresso e decisões
 
-- Plano em `.jarvis/work/FEAT-008/feat-008-jarvis-maintenance.md`, versionado
-  antes da implementação das skills.
+- Plano inicial recuperável no commit `c1403d0`, antes da implementação das skills.
+- [ADR-0031](../../adr/0031-adrs-proporcionais-ao-impacto.md), versão 0.32:
+  decisões relevantes em ADR; escolhas de Feature em specs/planos.
+- [ADR-0032](../../adr/0032-compactacao-de-features-encerradas.md), versão 0.33:
+  histórico por Épico, com contratos vigentes acessíveis e recuperação no Git.
 - Recomendação de limpeza: consolidação por Épico de Features concluídas,
   aprovadas, integradas e sem pendências; sem prazo arbitrário para apagar arquivos.
 - Execução cobre o Catálogo funcional. Worker e Frontend não são entregas prontas.
@@ -33,7 +36,30 @@ do commit do plano foi autorizada diretamente, dispensando rito próprio.
 
 ## Evidências e pendências
 
-Implementação e verificações pendentes. ADRs de evolução serão vinculados aqui.
+| Critério | Resultado |
+| --- | --- |
+| AC-01 | Passou: regra no fluxo, AGENTS, Arquiteto e template; plano no commit c1403d0 antes dos scripts/skills. |
+| AC-02 | Passou na revisão das instruções: exige aprovação/merge e ausência de pendências, preserva contratos, evidências, registros imutáveis e referências. Não houve limpeza real do acervo. |
+| AC-03 | Passou no macOS/OrbStack: start com migração, seed, HTTP 200 com resultado para acao, start repetido reutilizando os mesmos recursos e URLs da API/Scalar. Também exercitado --no-seed. |
+| AC-04 | Passou: parada real removeu o registro e parou o contêiner iniciado, preservando volume. Oito testes de propriedade/recuperação passaram, incluindo PID divergente, processo alheio, porta ocupada, contêiner reutilizado, labels divergentes e falha parcial. |
+| AC-05 | Passou: fontes atuais alinhadas, snapshot 0.33 idêntico, histórico anterior preservado; ADR-0003 alterado somente em estado e vínculo ao substituto. |
+| AC-06 | Passou: oito skills no validador oficial e descobertas como enabled/repo em skills/list; 488 links locais em 79 documentos sem referência quebrada e git diff --check. |
+
+Verificações em 25/10/2026. Testes do auxiliar:
+`python3 -m unittest discover -s .jarvis/scripts -p 'test_*.py' -v`.
+Validador oficial do skill-creator com PyYAML instalado apenas em diretório
+temporário. Consulta de descoberta usou initialize/skills/list, sem turnos de
+modelo nem agentes independentes. Testes de sockets/processos exigiram execução
+fora do sandbox após permissão; a primeira tentativa foi bloqueada pelo ambiente.
+
+Docker estava indisponível na primeira consulta e depois respondeu; o fluxo
+real de preparação e parada foi executado com sucesso. Não ficaram processos
+gerenciados ativos. A opção de identidade está documentada, mas seu startup e
+readiness funcional não foram exercitados; Worker/Frontend não foram iniciados.
+Código de produto, testes .NET e Compose não foram alterados.
+
+Nenhuma pendência nos critérios deste recorte. Aprovação final e integração
+continuam pendentes abaixo. O documento de trabalho é mantido para essa retomada.
 
 ## Aprovação e integração
 

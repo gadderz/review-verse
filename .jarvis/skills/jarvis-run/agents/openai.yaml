@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jarvis Run"
+  short_description: "Inicia o ambiente local para uso e testes manuais"

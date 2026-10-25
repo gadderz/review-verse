@@ -3,7 +3,7 @@
 Feature: [FEAT-008](../../../docs/specs/features/FEAT-008-manutencao-e-execucao-local-do-jarvis.md)
 Épico: [EP-001](../../../docs/specs/epics/EP-001-jarvis.md)
 Branch: `feat/008-jarvis-maintenance`
-Estado: Planejado
+Estado: Em andamento
 
 ## Plano e tarefas
 
@@ -23,7 +23,14 @@ como prontos. Compactação mantém contrato vigente e IDs em histórico por Ép
 
 ## Progresso e retomada
 
-- T-01: regra explicitada; este plano deve ser commitado antes de T-02 a T-05.
-- Demais tarefas: pendentes.
-- Próxima ação: implementar política, skills e auxiliar; não executar limpeza real.
+- T-01 concluída: regra e plano inicial no commit `c1403d0` antes da implementação.
+- T-02 concluída: ADR-0031/0.32 e ADR-0032/0.33, fontes e índices alinhados.
+- T-03 concluída: skill cleanup com compactação por Épico, elegibilidade e
+  proteção de contratos/referências imutáveis; nenhuma limpeza real executada.
+- T-04 concluída: skills run/stop e auxiliar; oito testes de propriedade passaram.
+  Startup real com migração/seed e --no-seed, HTTP 200, repetição e parada passaram.
+- T-05 concluída: oito skills validadas e descobertas; 488 links em 79 documentos,
+  histórico, snapshot e git diff --check passaram. Evidências na Feature.
+- Próxima ação: revisão/aprovação final e integração da FEAT-008. Preservar plano
+  enquanto houver contexto de fechamento; não executar limpeza do acervo sem pedido.
 - Aprovação final, PR e merge: pendentes; autorização atual cobre implementação.

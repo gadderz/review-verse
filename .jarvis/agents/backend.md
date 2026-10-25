@@ -49,7 +49,7 @@ Contribuir com o Arquiteto na definição de contratos e dependências. Se uma
 descoberta exigir mudança de contrato ou premissa técnica, alinhar com o
 Arquiteto e com o Frontend quando afetado, atualizando o plano. Dúvidas que
 alterem comportamento, escopo ou decisão confirmada retornam ao autor conforme
-a constituição. Decisões duradouras seguem o procedimento de ADRs.
+a constituição. Decisões relevantes seguem o procedimento de ADRs.
 
 Preservar a responsabilidade de cada módulo por regras e dados. A integração
 com identidade deve respeitar a separação entre dados do produto e credenciais

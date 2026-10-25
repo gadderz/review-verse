@@ -1,6 +1,6 @@
 # Versões da constituição
 
-Cada decisão adotada gera uma nova versão de `.jarvis/constitution.md` e uma
+Cada decisão relevante registrada em ADR gera uma versão de `.jarvis/constitution.md` e uma
 cópia textual idêntica nesta pasta, conforme o
 [procedimento de ADRs](../../docs/adr/README.md).
 
@@ -43,6 +43,8 @@ Para navegar pela documentação atual, use a
 | [0.29](0.29.txt) | Contrato HTTP da consulta de jogos. |
 | [0.30](0.30.txt) | Verificação do Catálogo com PostgreSQL isolado. |
 | [0.31](0.31.txt) | Integração no GitHub após aprovação final do autor. |
+| [0.32](0.32.txt) | ADRs proporcionais ao impacto; escolhas locais ficam nas specs/planos. |
+| [0.33](0.33.txt) | Compactação de Features encerradas em histórico por Épico. |
 
 Não há cópias arquivadas das versões 0.1 e 0.2. Seus marcos estão no histórico
 da constituição e nos ADRs retrospectivos; os textos completos não foram
