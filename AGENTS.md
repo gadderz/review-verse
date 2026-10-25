@@ -40,6 +40,10 @@ de trabalho da branch, conforme o artigo 2. Consulte `docs/specs/README.md` para
 os vínculos e estados. Consolide resultados e evidências na Feature e decisões
 nos ADRs antes de remover o documento temporário.
 
+Fazer commit do plano ao concluir o planejamento autorizado, antes da
+implementação dependente. Atualizá-lo nos marcos de execução; antes de removê-lo,
+conferir seu histórico Git e consolidar o SHA do plano na Feature.
+
 ## Contexto essencial
 
 - A POC ainda será construída. A arquitetura aprovada é API .NET modular, Worker

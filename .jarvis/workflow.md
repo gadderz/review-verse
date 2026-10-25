@@ -66,6 +66,11 @@ O documento é temporário no ciclo de execução e acompanha a branch enquanto
 ativo. Deve poder ser versionado junto ao trabalho; não ocultá-lo por padrão
 no `.gitignore`. Não depender apenas da memória da conversa.
 
+Ao terminar o planejamento autorizado, fazer commit do documento de trabalho
+antes de iniciar a implementação dependente. Atualizá-lo nos commits dos marcos
+de execução e antes de transferir o trabalho entre sessões. Um pedido apenas de
+planejamento permite registrar esse plano, sem autorizar implementar o produto.
+
 ## 4. Executar e acompanhar
 
 [Backend](agents/backend.md) e [Frontend](agents/frontend.md) detalham e atualizam
@@ -117,6 +122,10 @@ Antes de encerrar ou remover o documento de trabalho:
    documento de trabalho da branch que continuará a execução.
 5. Remover o documento temporário somente após consolidar e transferir seu contexto.
    Preservar as specs duradouras e o histórico versionado do trabalho integrado.
+
+Antes de remover o plano, conferir que `git log -- <caminho-do-plano>` permite
+recuperar pelo menos sua versão inicial. Não criar e remover o plano sem um
+commit intermediário que o preserve; registrar esse commit na Feature.
 
 O Épico só é Concluído com suas condições atendidas e Features concluídas ou
 formalmente retiradas do escopo. Encerrar uma branch não conclui automaticamente

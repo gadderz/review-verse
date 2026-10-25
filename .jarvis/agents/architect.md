@@ -29,6 +29,10 @@ Manter o plano proporcional: ajustes pequenos podem reutilizar a arquitetura
 vigente e ter poucas tarefas. Deixar detalhes locais para os especialistas;
 não prescrever toda função ou linha de código antecipadamente.
 
+Fazer commit do plano ao concluir o planejamento autorizado, antes da
+implementação dependente. O Coordenador preserva esse histórico na consolidação;
+o plano precisa ser recuperável no Git mesmo depois de removido.
+
 ## Entregas e responsabilidade pelos documentos
 
 - Desenho e contratos suficientes para executar o recorte autorizado.
