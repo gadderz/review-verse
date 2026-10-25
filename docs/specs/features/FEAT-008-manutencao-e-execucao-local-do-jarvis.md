@@ -58,10 +58,22 @@ gerenciados ativos. A opção de identidade está documentada, mas seu startup e
 readiness funcional não foram exercitados; Worker/Frontend não foram iniciados.
 Código de produto, testes .NET e Compose não foram alterados.
 
-Nenhuma pendência nos critérios deste recorte. Aprovação final e integração
-continuam pendentes abaixo. O documento de trabalho é mantido para essa retomada.
+Nenhuma pendência nos critérios deste recorte. Aprovação final recebida;
+integração acompanhada abaixo. O documento de trabalho foi encerrado após
+consolidar os critérios, decisões, resultados e retomada nesta spec. Seu histórico
+permanece recuperável nos commits `c1403d0` e `188df24`, sem perda das tarefas.
 
 ## Aprovação e integração
 
-Implementação autorizada pelo pedido acima. Aprovação final, push, PR e merge
-desta entrega ainda não realizados.
+- Aprovação final: autor respondeu “feature aprovada” em 25/10/2026 após a
+  entrega do commit `188df244646e22d2c4f861d2ecc62b4442dbf5c5`.
+- Origem: `feat/008-jarvis-maintenance`; remoto `origin`; destino `main`,
+  confirmado como padrão. Base atualizada por fetch: `bca4dc4`.
+- Push executado; branch publicada inicialmente em `188df24`.
+- PR: [#4 — feat(jarvis): add maintenance and local environment skills](https://github.com/gadderz/review-verse/pull/4).
+- Merge: pendente. Conferir o SHA atualizado e as exigências remotas antes de
+  integrar. A main não possui proteção ou regras aplicáveis nesta conferência;
+  os checks e o estado de merge ainda serão consultados para o PR atualizado.
+- Retomada: atualizar o PR com este registro, conferir diferenças e checks,
+  integrar com verificação do SHA esperado e consolidar o resultado remoto.
+  A aprovação já recebida permanece válida para o fechamento documental.
