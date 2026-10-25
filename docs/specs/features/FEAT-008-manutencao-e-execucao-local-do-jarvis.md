@@ -58,8 +58,8 @@ gerenciados ativos. A opção de identidade está documentada, mas seu startup e
 readiness funcional não foram exercitados; Worker/Frontend não foram iniciados.
 Código de produto, testes .NET e Compose não foram alterados.
 
-Nenhuma pendência nos critérios deste recorte. Aprovação final recebida;
-integração acompanhada abaixo. O documento de trabalho foi encerrado após
+Nenhuma pendência nos critérios ou na integração deste recorte. Aprovação final
+e merge confirmados abaixo. O documento de trabalho foi encerrado após
 consolidar os critérios, decisões, resultados e retomada nesta spec. Seu histórico
 permanece recuperável nos commits `c1403d0` e `188df24`, sem perda das tarefas.
 
@@ -71,9 +71,15 @@ permanece recuperável nos commits `c1403d0` e `188df24`, sem perda das tarefas.
   confirmado como padrão. Base atualizada por fetch: `bca4dc4`.
 - Push executado; branch publicada inicialmente em `188df24`.
 - PR: [#4 — feat(jarvis): add maintenance and local environment skills](https://github.com/gadderz/review-verse/pull/4).
-- Merge: pendente. Conferir o SHA atualizado e as exigências remotas antes de
-  integrar. A main não possui proteção ou regras aplicáveis nesta conferência;
-  os checks e o estado de merge ainda serão consultados para o PR atualizado.
-- Retomada: atualizar o PR com este registro, conferir diferenças e checks,
-  integrar com verificação do SHA esperado e consolidar o resultado remoto.
-  A aprovação já recebida permanece válida para o fechamento documental.
+- Merge confirmado no GitHub em 25/10/2026 às 22:38:47 UTC, estado `MERGED`:
+  `61bc4155ee66e5eeece00014f611c0763d3de36e`. Head conferido:
+  `b09407de562d8bedc4a5f6a2aca55364d643c426`.
+- Conflitos e exigências: nenhum conflito; PR `CLEAN`/`MERGEABLE`, sem checks
+  ou revisões obrigatórias configurados. Main sem proteção/regras aplicáveis;
+  merge normal com SHA esperado, sem bypass administrativo.
+- Conferência de fechamento: 486 links locais em 78 documentos após remover
+  o plano, `git diff --check`, snapshot 0.33 idêntico e plano inicial recuperável
+  em `c1403d0`. Scripts e skills iguais a `188df24`, sem repetir testes funcionais
+  já aprovados. A árvore do merge é idêntica à do head integrado.
+- Pendências: nenhuma. Este resultado é consolidado em atualização documental
+  posterior prevista na etapa 7, sem alterações de implementação ou decisões.
