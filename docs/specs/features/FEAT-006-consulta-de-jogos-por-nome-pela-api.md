@@ -248,11 +248,25 @@ O padrão foi acrescentado depois da entrega local, pelo
 [ADR-0030](../../adr/0030-integracao-no-github-apos-aprovacao-final.md).
 
 - Entrega técnica: concluída no commit local `5be4309`.
-- Aprovação final para integração: ainda não registrada nesta retomada.
-- Origem: `feat/006-game-search-api`; remoto `origin`; destino a conferir.
-- Push e merge: não executados nesta retomada; resultado remoto não conferido.
-- Retomada: após aprovação final explícita, atualizar a base remota, conferir
-  diferenças, publicar a branch e criar/reutilizar o PR conforme a etapa 7.
+- Aprovação final para integração: autor respondeu “feature aprovada” em
+  25/10/2026 à pergunta explícita sobre incluir a FEAT-006 (`5be4309`) na
+  integração. A aprovação da FEAT-007 já havia sido registrada separadamente.
+- Origem: `feat/006-game-search-api`; remoto `origin`; destino `main`.
+- Push: executado em 25/10/2026 para `origin/feat/006-game-search-api`,
+  preservando `5be4309f67fb93d0024d6aaec945e0568b108dcc`.
+- PR: criação tentada pelo conector GitHub com base `main` e título
+  `feat(catalog): add game search by name`; recusada pela API com HTTP 403,
+  `Resource not accessible by integration`. Nenhum PR foi criado.
+- Merge e conflitos: não executados; a base remota conferida continua em
+  `279d51c`. O impedimento é acesso do conector à operação de PR.
+- Verificações desta integração: `git diff --check` passou; código, testes,
+  Compose e manifesto de ferramentas permanecem idênticos ao commit aprovado.
+  Build e suítes não foram repetidos, pois não houve alteração nessas áreas.
+- Retomada: corrigir o acesso da conexão GitHub à criação e integração de PRs,
+  ou disponibilizar cliente autenticado com as permissões necessárias. `gh`
+  e sua configuração local não estão presentes. Depois, conferir a base e
+  possíveis PRs, integrar esta Feature e em seguida a FEAT-007. As aprovações
+  já recebidas permanecem válidas; repetir verificações afetadas por mudanças.
 
 ## Próxima ação
 

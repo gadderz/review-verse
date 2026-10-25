@@ -50,8 +50,8 @@ Não exige cliente específico e não inclui push/merge sem aprovação final.
 
 ## O que falta
 
-Nenhuma pendência no recorte documental. Aprovação final recebida; integração
-remota depende de resolver a inclusão da FEAT-006, conforme a seção própria.
+Nenhuma pendência no recorte documental. As duas entregas foram aprovadas e
+publicadas; PRs e merges aguardam resolver o acesso do conector GitHub.
 
 ## Evidências
 
@@ -66,6 +66,13 @@ remota depende de resolver a inclusão da FEAT-006, conforme a seção própria.
 Mudança documental. Build e testes .NET não se aplicam; não há exceção à política
 de testes de negócio. Push, PR e merge não foram executados como teste da regra.
 
+No fechamento após as aprovações, os pushes das duas branches foram confirmados
+por `git ls-remote`. Passaram 62 links locais nos seis arquivos de registro,
+`git diff --check`, identidade do snapshot 0.31 e preservação do código, testes,
+configuração, ADRs e versões. A criação do PR falhou com HTTP 403 da API GitHub;
+merge não executado. Os resultados de acesso não alteram a validação documental
+dos critérios acima.
+
 ## Aprovação final e integração no GitHub
 
 - Aprovação da decisão: pedido do autor registrado no ADR-0030.
@@ -75,22 +82,35 @@ de testes de negócio. Push, PR e merge não foram executados como teste da regr
   confirmado como branch padrão pelo GitHub.
 - Base remota atualizada por `git fetch origin`: `279d51c` em 25/10/2026.
   A diferença inclui `5be4309` (FEAT-006) e `f1388a3` (FEAT-007).
-- Push, PR, conflitos e merge: não executados nesta retomada. Consulta ao
-  GitHub não encontrou PRs existentes para reutilizar.
+- Push: executado em 25/10/2026 para `origin/feat/007-github-feature-close`;
+  publicação inicial em `0c51abf`, com registros de retomada posteriores nesta
+  mesma branch. A FEAT-006 também foi publicada em sua branch própria.
+- PR, conflitos e merge: não executados para esta Feature. A consulta ao
+  GitHub não encontrou PRs existentes; a criação do PR da dependência FEAT-006
+  foi recusada pela API com HTTP 403, `Resource not accessible by integration`.
+  Sem essa integração, não foi antecipado PR ou merge da FEAT-007.
 - Dependência: a FEAT-006 ainda não está na base remota. Além da ancestralidade
   Git, a constituição 0.31 referencia os ADRs 0019 a 0029, incorporados pela
   FEAT-006. Publicar/integrar esta branch completa também incluiria essa entrega.
-- Retomada: pergunta enviada ao autor sobre incluir a FEAT-006 na aprovação.
-  A aprovação da FEAT-007 permanece válida, sem necessidade de reconfirmação.
-  Com a dependência autorizada, executar a etapa 7 respeitando o recorte aprovado.
+- Autorização da dependência: em 25/10/2026, o autor respondeu novamente
+  “feature aprovada” à pergunta explícita sobre integrar a FEAT-006 (`5be4309`).
+  Ambas as entregas estão autorizadas, sem necessidade de reconfirmação.
+- Impedimento: o push SSH funciona, mas o conector não conseguiu criar PR.
+  Não há `gh` nem configuração local desse cliente. É necessário corrigir o
+  acesso da conexão GitHub ou disponibilizar um cliente autenticado com as
+  permissões de criação e integração de PRs.
+- Retomada: após resolver o acesso, atualizar a base, conferir PRs existentes,
+  integrar primeiro a FEAT-006 e depois a FEAT-007 na main, preservando o
+  recorte de cada PR e registrando os resultados reais. As aprovações seguem
+  válidas; não é necessário pedi-las novamente.
 
 ## Próxima ação
 
-Regra documental concluída e aprovada. Resolver com o autor a inclusão da
-FEAT-006 na integração, preservando sua entrega local `5be4309`, e executar a
-etapa 7 quando o conjunto a integrar estiver autorizado.
+Regra documental concluída e aprovada; branches publicadas. Resolver o acesso
+de escrita do conector para concluir a etapa 7 das duas entregas autorizadas,
+preservando o commit `5be4309` da FEAT-006 e registrando cada resultado remoto.
 
 O documento de trabalho é preservado para eventual integração posterior.
 Commit local da entrega: `f1388a3`,
 `docs(jarvis): require GitHub integration after final approval`.
-Esse commit não comprova publicação remota.
+A publicação das branches está registrada acima; nenhum merge foi realizado.

@@ -31,7 +31,7 @@ definido na documentação de visão e arquitetura.
 | [FEAT-003 — Skills e perfis no Codex](../features/FEAT-003-skills-e-perfis-no-codex.md) | Concluído | Skills descobertas no CLI; perfis verificados estruturalmente; evidências e limites consolidados. |
 | [FEAT-004 — Contratos dos agentes](../features/FEAT-004-contratos-dos-agentes.md) | Concluído | Seis contratos adotados; cinco skills descobertas no Codex e cinco perfis conferidos estruturalmente. Evidências e limites consolidados. |
 | [FEAT-005 — Revisão integrada](../features/FEAT-005-revisao-integrada-do-jarvis.md) | Concluído | Três desalinhamentos corrigidos; integridade, formatos, descoberta e cópia isolada conferidos. Base inicial pronta para commit e piloto no Codex, com limites registrados. |
-| [FEAT-007 — Integração no GitHub após aprovação final](../features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | Concluído | Padrão verificado e aprovado; integração remota aguarda resolver a inclusão da FEAT-006. |
+| [FEAT-007 — Integração no GitHub após aprovação final](../features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | Concluído | Padrão verificado, aprovado e branch publicada; PR/merge aguardam corrigir o acesso e integrar FEAT-006. |
 
 O inventário de Features deste Épico ainda está em detalhamento. As condições
 restantes não são entregas concluídas nem Features implicitamente aprovadas.
@@ -87,7 +87,8 @@ restantes não são entregas concluídas nem Features implicitamente aprovadas.
 
 ## Próxima ação
 
-Acompanhar a aprovação final e a integração das entregas pendentes no GitHub.
+Resolver o acesso do conector GitHub aos PRs (HTTP 403) e concluir a integração
+das duas entregas já aprovadas e publicadas, conforme a retomada nas Features.
 O exercício independente dos perfis, a avaliação da seleção automática e a
 validação nos outros clientes permanecem pendentes e serão tratados conforme
 as próximas autorizações e a disponibilidade das ferramentas.

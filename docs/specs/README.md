@@ -21,8 +21,8 @@ no artigo 2 da [constituição](../../.jarvis/constitution.md).
 | [FEAT-003 — Skills e perfis no Codex](features/FEAT-003-skills-e-perfis-no-codex.md) | EP-001 | Concluído | Skills descobertas pelo CLI e perfis conferidos estruturalmente; guia e limites registrados. |
 | [FEAT-004 — Contratos dos agentes](features/FEAT-004-contratos-dos-agentes.md) | EP-001 | Concluído | Seis contratos adotados; cinco skills descobertas no Codex e cinco perfis conferidos estruturalmente. Evidências e limites consolidados. |
 | [FEAT-005 — Revisão integrada](features/FEAT-005-revisao-integrada-do-jarvis.md) | EP-001 | Concluído | Três desalinhamentos corrigidos; integridade, formatos, descoberta e cópia isolada conferidos. Base inicial pronta para commit e piloto no Codex, com limites registrados. |
-| [FEAT-006 — Consulta de jogos por nome pela API](features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) | EP-002 | Concluído | Consulta pública, persistência e massa controlada entregues; nove unitários e 37 integrados passaram. Dois achados corrigidos, evidências consolidadas. |
-| [FEAT-007 — Integração no GitHub após aprovação final](features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | EP-001 | Concluído | Padrão verificado e aprovado; integração remota aguarda resolver a inclusão da FEAT-006. |
+| [FEAT-006 — Consulta de jogos por nome pela API](features/FEAT-006-consulta-de-jogos-por-nome-pela-api.md) | EP-002 | Concluído | Consulta verificada, aprovada e branch publicada; PR/merge impedidos por HTTP 403 do conector GitHub. |
+| [FEAT-007 — Integração no GitHub após aprovação final](features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | EP-001 | Concluído | Padrão verificado, aprovado e branch publicada; PR/merge aguardam corrigir o acesso e integrar FEAT-006. |
 
 O Catálogo de Jogos inicia a especificação de produto em EP-002 e FEAT-006.
 As demais Features e Épicos serão especificados conforme o trabalho for iniciado.
