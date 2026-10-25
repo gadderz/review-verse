@@ -123,6 +123,43 @@ formalmente retiradas do escopo. Encerrar uma branch não conclui automaticament
 uma Feature ou seu Épico. Uma correção posterior pode reusar a Feature e abrir
 outro documento de trabalho; atualizar seu estado se houver critérios pendentes.
 
+## 7. Integrar no GitHub após aprovação final
+
+Etapa padrão adotada no
+[ADR-0030](../docs/adr/0030-integracao-no-github-apos-aprovacao-final.md),
+constituição 0.31, sob responsabilidade do Coordenador.
+
+1. Conferir a aprovação final explícita do autor, a Feature e o conjunto
+   revisado de mudanças/commits a que ela se aplica. Concluído, testes passando
+   e aprovação de spec ou plano não equivalem a essa aprovação. Reutilizar a
+   autorização existente na sessão, sem pedir confirmação novamente.
+2. Conferir remoto, destino acordado e diferenças a integrar. Se não houver
+   destino indicado, consultar a branch padrão no GitHub. Atualizar a referência
+   da base remota antes de integrar.
+3. Fazer push da branch e criar ou reutilizar seu PR, descrevendo problema,
+   resultado, vínculo à Feature, verificações e limites reais. Seguir commits
+   em inglês e conferir as verificações/revisões exigidas pelo repositório.
+4. Havendo conflitos, integrar a base atualizada na branch da Feature e
+   resolvê-los preservando contribuições e critérios aprovados. Reexecutar as
+   verificações afetadas: testes pertinentes para código; links locais e
+   `git diff --check` para documentação. Atualizar a revisão conforme o impacto,
+   enviar a resolução e conferir o PR. Não escolher automaticamente todo um
+   lado nem sobrescrever trabalho remoto.
+5. Realizar o merge no GitHub conforme as opções e regras permitidas.
+   A aprovação final já dada cobre push, resolução técnica e merge; dúvidas
+   que mudem comportamento ou escopo retornam ao autor.
+6. Confirmar o resultado remoto e informar URL do PR, branches, commit integrado
+   e resultado das verificações. Consolidar a evidência na Feature e atualizar
+   Épico/índices quando afetados. Se necessário, registrar o resultado em
+   atualização documental posterior; nunca antecipar sucesso na spec.
+
+Se acesso, checks, regras do repositório ou conflito material impedirem avançar,
+registrar causa e próxima ação. Não contornar exigências remotas para concluir.
+Enquanto houver integração pendente, manter o documento de trabalho ou transferir
+seu contexto completo à Feature antes de removê-lo. Distinguir entrega técnica
+local de integração no GitHub; não declarar push ou merge por estarem apenas
+planejados, solicitados ou agendados.
+
 ## Retomada entre sessões
 
 Ler a spec da Feature, seu Épico, os ADRs pertinentes e o documento de trabalho

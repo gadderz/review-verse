@@ -3,7 +3,7 @@
 Base local de desenvolvimento orientado por especificações (SDD, de
 *Specification-Driven Development*) para o ReviewVerse.
 
-Status: constituição revisada e decisões registradas até a versão 0.19.
+Status: constituição revisada e decisões registradas até a versão 0.31.
 Seis contratos adotados, com desenho e planejamento técnico sob o Arquiteto.
 Cinco skills descobertas no Codex e cinco perfis locais configurados e conferidos
 estruturalmente. Execução independente dos perfis e testes no OpenCode e Claude
@@ -54,6 +54,13 @@ cada decisão à sua versão; as cópias históricas permanecem preservadas. Mud
 de decisão exigem novos ADRs, com referência ao registro substituído.
 
 ## Uso nas ferramentas
+
+O fechamento padrão inclui integração no GitHub após aprovação final explícita
+conforme [ADR-0030](../docs/adr/0030-integracao-no-github-apos-aprovacao-final.md)
+e etapa 7 do fluxo. O Coordenador faz push, cria/reutiliza PR, resolve conflitos
+com revalidação e realiza merge, sem nova confirmação para ações já aprovadas.
+Mudanças materiais retornam ao autor; impedimentos e resultado remoto ficam na
+Feature. Concluído e aprovação da spec não comprovam aprovação final ou merge.
 
 Abra uma sessão na raiz do repositório e peça, por exemplo:
 

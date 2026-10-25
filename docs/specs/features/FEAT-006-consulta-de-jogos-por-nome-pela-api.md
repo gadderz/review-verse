@@ -242,8 +242,20 @@ as verificações sem depender do plano temporário ou de TRX local. As decisõe
 permanecem nos ADRs 0019 a 0029 e nas versões 0.20 a 0.30, sem alterar registros
 anteriores. Commit preparado: `feat(catalog): add game search by name`.
 
+## Aprovação final e integração no GitHub
+
+O padrão foi acrescentado depois da entrega local, pelo
+[ADR-0030](../../adr/0030-integracao-no-github-apos-aprovacao-final.md).
+
+- Entrega técnica: concluída no commit local `5be4309`.
+- Aprovação final para integração: ainda não registrada nesta retomada.
+- Origem: `feat/006-game-search-api`; remoto `origin`; destino a conferir.
+- Push e merge: não executados nesta retomada; resultado remoto não conferido.
+- Retomada: após aprovação final explícita, atualizar a base remota, conferir
+  diferenças, publicar a branch e criar/reutilizar o PR conforme a etapa 7.
+
 ## Próxima ação
 
 Usar o guia local para consumir a consulta e especificar a próxima Feature do
 Catálogo, incluindo a importação IGDB em seu próprio recorte. Consultar o
-histórico Git desta branch para o commit da entrega; não houve merge ou publicação.
+histórico Git para o commit da entrega. A integração tem acompanhamento acima.

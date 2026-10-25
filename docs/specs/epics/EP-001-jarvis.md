@@ -31,6 +31,7 @@ definido na documentação de visão e arquitetura.
 | [FEAT-003 — Skills e perfis no Codex](../features/FEAT-003-skills-e-perfis-no-codex.md) | Concluído | Skills descobertas no CLI; perfis verificados estruturalmente; evidências e limites consolidados. |
 | [FEAT-004 — Contratos dos agentes](../features/FEAT-004-contratos-dos-agentes.md) | Concluído | Seis contratos adotados; cinco skills descobertas no Codex e cinco perfis conferidos estruturalmente. Evidências e limites consolidados. |
 | [FEAT-005 — Revisão integrada](../features/FEAT-005-revisao-integrada-do-jarvis.md) | Concluído | Três desalinhamentos corrigidos; integridade, formatos, descoberta e cópia isolada conferidos. Base inicial pronta para commit e piloto no Codex, com limites registrados. |
+| [FEAT-007 — Integração no GitHub após aprovação final](../features/FEAT-007-integracao-no-github-apos-aprovacao-final.md) | Concluído | Padrão adotado no ADR-0030/0.31, fontes e templates verificados. Aprovação e integração remota têm registro próprio. |
 
 O inventário de Features deste Épico ainda está em detalhamento. As condições
 restantes não são entregas concluídas nem Features implicitamente aprovadas.
@@ -69,10 +70,16 @@ restantes não são entregas concluídas nem Features implicitamente aprovadas.
 - Concluída a FEAT-005: revisão integrada do SDD, três desalinhamentos corrigidos
   e base inicial conferida para commit e piloto no Codex, incluindo cópia isolada.
 
+- Exercitado o processo na FEAT-006, com consulta de produto e evidências
+  consolidadas. O uso independente de perfis não foi comprovado por esse piloto.
+- Registrado o fechamento no GitHub após aprovação final no ADR-0030/FEAT-007,
+  sem antecipar resultado de publicação ou merge.
+
 ## O que falta
 
 - Detalhar as próximas Features do Jarvis com o autor.
-- Aplicar os contratos e procedimentos a uma Feature real do produto no Codex.
+- Concluir o acompanhamento do fechamento remoto após aprovação final e
+  continuar avaliando o processo com as próximas Features.
 - Verificar a base em sessões reais das três ferramentas.
 - OpenCode aguarda configuração e Claude Code aguarda instalação; seus testes
   não foram executados. Exercício independente dos perfis e seleção automática
@@ -80,7 +87,7 @@ restantes não são entregas concluídas nem Features implicitamente aprovadas.
 
 ## Próxima ação
 
-Escolher com o autor uma Feature de produto para exercitar o Jarvis no Codex.
+Acompanhar a aprovação final e a integração das entregas pendentes no GitHub.
 O exercício independente dos perfis, a avaliação da seleção automática e a
 validação nos outros clientes permanecem pendentes e serão tratados conforme
 as próximas autorizações e a disponibilidade das ferramentas.

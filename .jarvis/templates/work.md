@@ -58,6 +58,18 @@ dependências ainda abertos sem promovê-los a decisões confirmadas.>
 - O que falta: <pendências>.
 - Próxima ação: <ação concreta>.
 
+## Aprovação e integração no GitHub
+
+- Aprovação final do autor e recorte: <pendente ou referência explícita>.
+- Origem, remoto, destino e PR: <conferir antes de integrar>.
+- Push e merge: <não executado ou resultado confirmado e commits>.
+- Conflitos e verificações afetadas: <resultado real>.
+- Próxima ação da integração: <ação, responsável e impedimento ou nenhuma>.
+
+Após aprovação final, o Coordenador executa a etapa 7 do fluxo sem repetir
+pedidos de confirmação já concedidos. Preservar contexto de integração pendente
+e transferir resultados reais à Feature antes de remover este arquivo.
+
 ## Consolidação para encerrar
 
 - [ ] Resultados, pendências e evidências transferidos para a Feature.
@@ -65,5 +77,6 @@ dependências ainda abertos sem promovê-los a decisões confirmadas.>
 - [ ] Progresso do Épico e índice de specs atualizados.
 - [ ] Trabalho restante tem contexto de retomada preservado ou não há pendências.
 - [ ] Registros duradouros não dependem deste arquivo para consultar evidências.
+- [ ] Aprovação, push, PR, merge e conflitos têm resultado real registrado; integração pendente tem retomada preservada.
 
 Somente após essa conferência, encerrar e remover o documento temporário.

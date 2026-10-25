@@ -42,6 +42,7 @@ Para navegar pela documentação atual, use a
 | [0.28](0.28.txt) | Busca literal e agregação no PostgreSQL. |
 | [0.29](0.29.txt) | Contrato HTTP da consulta de jogos. |
 | [0.30](0.30.txt) | Verificação do Catálogo com PostgreSQL isolado. |
+| [0.31](0.31.txt) | Integração no GitHub após aprovação final do autor. |
 
 Não há cópias arquivadas das versões 0.1 e 0.2. Seus marcos estão no histórico
 da constituição e nos ADRs retrospectivos; os textos completos não foram
